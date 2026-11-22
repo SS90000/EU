@@ -47,6 +47,19 @@ def contact(*parts):
     return " · ".join(p.strip() for p in parts if p and p.strip())
 
 
+def clean_city(c):
+    """'Toulouse Cedex 9' -> 'Toulouse', 'Rozzano (MI)' / 'Rozzano MI' -> 'Rozzano', 'Badalona, Barcelona' -> 'Badalona'."""
+    c = (c or "").strip()
+    if re.fullmatch(r"[-–.\s]*|n/?a|none|do not edit|.*no country specified.*", c, re.I):
+        return ""
+    c = re.sub(r"\s*\([^)]*\)", "", c)
+    c = re.sub(r"\s+cedex\b.*$", "", c, flags=re.I)
+    c = re.split(r",|\s[-–/]\s", c)[0].strip()
+    c = re.sub(r"\s+[A-Z]{2}$", "", c)  # Italian province code
+    c = re.sub(r"\s+\d+$", "", c)       # arrondissement numbers
+    return c.title() if c.isupper() else c
+
+
 def dmy(s):
     """'21/11/2026' -> '2026-11-21'"""
     m = re.match(r"(\d\d)/(\d\d)/(\d{4})", s or "")
@@ -128,7 +141,7 @@ def ctis_trim(rec, srow):
             if dept and dept.lower() not in ("na", "n/a", "-", "none"):
                 name = f"{name} – {dept}"
             who = contact(pi.get("firstName", ""), pi.get("lastName", "")).replace(" · ", " ")
-            lst.append({"f": name[:160], "city": (ad.get("city") or "").strip(), "zip": (ad.get("postcode") or "").strip(),
+            lst.append({"f": name[:160], "city": clean_city(ad.get("city")), "zip": (ad.get("postcode") or "").strip(),
                         "c": contact(who, pi.get("telephone") or oa.get("phone"), pi.get("email") or oa.get("email"))})
     title = ids.get("publicTitle") or ids.get("fullTitle") or srow.get("ctTitle", "")
     obj = (ti.get("trialObjective") or {}).get("mainObjective", "")
@@ -223,7 +236,7 @@ def ctis_rows(country, skip):
             continue
         a0, a1 = ctis_ages(tr["age"])
         sx = tr["sex"].lower()
-        sites = [dict(s, s=st, pr="") for s in tr["sites"].get(country, [])]
+        sites = [dict(s, s=st, pr="", city=clean_city(s["city"])) for s in tr["sites"].get(country, [])]
         crit = ""
         if tr["inc"]:
             crit += "Inclusion criteria:\n" + "\n".join(f"{i + 1}. {x}" for i, x in enumerate(tr["inc"]))
@@ -290,7 +303,7 @@ def isrctn_rows(country, skip):
         for c in p.findall("i:trialCentres/i:trialCentre", NS):
             if tx(c, "i:country") not in names:
                 continue
-            sites.append({"f": tx(c, "i:name")[:160] or "Study site", "city": tx(c, "i:city"), "zip": tx(c, "i:zip"),
+            sites.append({"f": tx(c, "i:name")[:160] or "Study site", "city": clean_city(tx(c, "i:city")), "zip": tx(c, "i:zip"),
                           "s": st, "pr": "", "c": ""})
         if not sites:
             nosite += 1
@@ -372,6 +385,20 @@ def geocode(rows, known):
                         pos = None
                     cache[ck] = pos
                     time.sleep(1.1)
+            if pos is None and k and s["zip"]:
+                zk = f"{cc}||{s['zip'].replace(' ', '')[:5]}"
+                if zk in cache:
+                    pos = cache[zk]
+                elif looked < 600:
+                    looked += 1
+                    try:
+                        j = http("https://nominatim.openstreetmap.org/search?" + urllib.parse.urlencode(
+                            {"format": "json", "limit": 1, "countrycodes": cc, "postalcode": s["zip"]}), tries=2, timeout=30)
+                        pos = [round(float(j[0]["lat"]), 4), round(float(j[0]["lon"]), 4)] if j else None
+                    except Exception:
+                        pos = None
+                    cache[zk] = pos
+                    time.sleep(1.1)
             if pos:
                 s["lat"], s["lon"] = pos[0], pos[1]
                 placed += 1
@@ -385,6 +412,10 @@ def geocode(rows, known):
 
 # ---------- into the finder's format ----------
 def to_row(x):
+    x["title"] = " ".join((x["title"] or x["official"] or x["id"]).split())
+    x["official"] = " ".join((x["official"] or "").split())
+    if x["a1"] is not None and x["a1"] >= 90:
+        x["a1"] = None  # registries use 99, 100 or 120 to mean "no upper limit"
     ident = {"briefTitle": x["title"], "officialTitle": x["official"]}
     conds = {"conditions": x["conds"], "keywords": ["rare disease"] if x["rare"] else []}
     areas = bt.classify(ident, conds, [], x["anc"], x["hv"])
