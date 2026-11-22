@@ -1,0 +1,42 @@
+{
+ "built": "2026-11-22T19:13:56Z",
+ "country": "United Kingdom",
+ "area": "oncology",
+ "studies": 959,
+ "registryTotal": 3247,
+ "sites": 4830,
+ "hcOnly": 0,
+ "categories": {
+  "prostate": 104,
+  "breast": 108,
+  "colorectal": 100,
+  "liver": 51,
+  "brain": 59,
+  "childhood": 45,
+  "skin": 58,
+  "lymphoma": 104,
+  "solid": 138,
+  "leukemia": 102,
+  "lung": 165,
+  "gyn": 90,
+  "germcell": 10,
+  "pancreas": 61,
+  "general": 63,
+  "sarcoma": 43,
+  "headneck": 46,
+  "thyroid": 9,
+  "neuroendocrine": 11,
+  "upperGI": 55,
+  "kidney": 29,
+  "myeloma": 49,
+  "bladder": 43,
+  "mesothelioma": 9
+ },
+ "kinds": {
+  "treat": 646,
+  "diag": 32,
+  "obs": 225,
+  "support": 56
+ },
+ "source": "ClinicalTrials.gov API v2"
+}

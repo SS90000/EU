@@ -1,0 +1,32 @@
+{
+ "built": "2026-11-22T19:12:16Z",
+ "country": "France",
+ "studies": 7388,
+ "registryTotal": 7388,
+ "areas": {
+  "oncology": {
+   "studies": 1944,
+   "sites": 12843
+  },
+  "neurology": {
+   "studies": 1181,
+   "sites": 3804
+  },
+  "other": {
+   "studies": 4465,
+   "sites": 14953
+  },
+  "rare": {
+   "studies": 1471,
+   "sites": 7412
+  }
+ },
+ "hcOnly": 0,
+ "hcNoRegistry": null,
+ "notIncluded": {
+  "ACTIVE_NOT_RECRUITING": 2205,
+  "ENROLLING_BY_INVITATION": 124,
+  "SUSPENDED": 71
+ },
+ "source": "ClinicalTrials.gov API v2"
+}

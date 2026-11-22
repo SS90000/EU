@@ -1,0 +1,42 @@
+{
+ "built": "2026-11-22T19:13:07Z",
+ "country": "Italy",
+ "area": "oncology",
+ "studies": 1638,
+ "registryTotal": 4677,
+ "sites": 7950,
+ "hcOnly": 0,
+ "categories": {
+  "general": 111,
+  "breast": 216,
+  "lung": 232,
+  "colorectal": 152,
+  "gyn": 182,
+  "leukemia": 164,
+  "lymphoma": 165,
+  "brain": 78,
+  "childhood": 57,
+  "sarcoma": 61,
+  "skin": 83,
+  "solid": 120,
+  "headneck": 74,
+  "thyroid": 20,
+  "neuroendocrine": 27,
+  "germcell": 8,
+  "myeloma": 56,
+  "upperGI": 74,
+  "pancreas": 85,
+  "kidney": 45,
+  "liver": 100,
+  "prostate": 96,
+  "bladder": 61,
+  "mesothelioma": 10
+ },
+ "kinds": {
+  "obs": 667,
+  "treat": 804,
+  "diag": 64,
+  "support": 103
+ },
+ "source": "ClinicalTrials.gov API v2"
+}

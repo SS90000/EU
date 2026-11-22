@@ -1,0 +1,35 @@
+{
+ "built": "2026-11-22T19:12:37Z",
+ "country": "Germany",
+ "area": "other",
+ "studies": 1772,
+ "registryTotal": 3154,
+ "sites": 7275,
+ "hcOnly": 0,
+ "categories": {
+  "heart": 540,
+  "metabolic": 260,
+  "women": 170,
+  "genetic": 215,
+  "immune": 212,
+  "skin": 210,
+  "blood": 97,
+  "infection": 150,
+  "digestive": 167,
+  "musculoskeletal": 222,
+  "eyeent": 114,
+  "kidney": 136,
+  "lung": 214,
+  "pain": 209,
+  "healthy": 62,
+  "general": 80,
+  "mental": 150
+ },
+ "kinds": {
+  "obs": 690,
+  "support": 216,
+  "treat": 830,
+  "diag": 36
+ },
+ "source": "ClinicalTrials.gov API v2"
+}

@@ -1,0 +1,32 @@
+{
+ "built": "2026-11-22T19:12:16Z",
+ "country": "France",
+ "area": "neurology",
+ "studies": 1181,
+ "registryTotal": 7388,
+ "sites": 3804,
+ "hcOnly": 0,
+ "categories": {
+  "braintumour": 106,
+  "stroke": 214,
+  "movement": 117,
+  "childneuro": 141,
+  "dementia": 154,
+  "neuromuscular": 205,
+  "injury": 65,
+  "epilepsy": 79,
+  "ms": 76,
+  "neuroinfect": 21,
+  "sleep": 54,
+  "generalneuro": 28,
+  "als": 33,
+  "headache": 22
+ },
+ "kinds": {
+  "treat": 338,
+  "obs": 396,
+  "support": 327,
+  "diag": 120
+ },
+ "source": "ClinicalTrials.gov API v2"
+}

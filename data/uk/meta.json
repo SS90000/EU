@@ -1,0 +1,32 @@
+{
+ "built": "2026-11-22T19:13:56Z",
+ "country": "United Kingdom",
+ "studies": 3247,
+ "registryTotal": 3247,
+ "areas": {
+  "oncology": {
+   "studies": 959,
+   "sites": 4830
+  },
+  "neurology": {
+   "studies": 447,
+   "sites": 1310
+  },
+  "other": {
+   "studies": 1911,
+   "sites": 6448
+  },
+  "rare": {
+   "studies": 762,
+   "sites": 3387
+  }
+ },
+ "hcOnly": 0,
+ "hcNoRegistry": null,
+ "notIncluded": {
+  "ACTIVE_NOT_RECRUITING": 1899,
+  "ENROLLING_BY_INVITATION": 200,
+  "SUSPENDED": 86
+ },
+ "source": "ClinicalTrials.gov API v2"
+}

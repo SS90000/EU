@@ -1,0 +1,33 @@
+{
+ "built": "2026-11-22T19:12:37Z",
+ "country": "Germany",
+ "area": "rare",
+ "studies": 790,
+ "registryTotal": 3154,
+ "sites": 4260,
+ "hcOnly": 0,
+ "categories": {
+  "heart": 160,
+  "metabolic": 127,
+  "genetic": 220,
+  "immune": 242,
+  "skin": 134,
+  "blood": 243,
+  "rarecancer": 338,
+  "kidney": 45,
+  "musculoskeletal": 121,
+  "digestive": 85,
+  "eyeent": 36,
+  "lung": 102,
+  "rareneuro": 165,
+  "infection": 38,
+  "raregeneral": 12
+ },
+ "kinds": {
+  "obs": 263,
+  "treat": 490,
+  "support": 28,
+  "diag": 9
+ },
+ "source": "ClinicalTrials.gov API v2"
+}

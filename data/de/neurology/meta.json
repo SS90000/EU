@@ -1,0 +1,32 @@
+{
+ "built": "2026-11-22T19:12:37Z",
+ "country": "Germany",
+ "area": "neurology",
+ "studies": 434,
+ "registryTotal": 3154,
+ "sites": 1818,
+ "hcOnly": 0,
+ "categories": {
+  "dementia": 49,
+  "stroke": 71,
+  "movement": 74,
+  "childneuro": 17,
+  "braintumour": 62,
+  "neuromuscular": 94,
+  "neuroinfect": 5,
+  "als": 20,
+  "headache": 7,
+  "injury": 12,
+  "generalneuro": 4,
+  "ms": 44,
+  "epilepsy": 13,
+  "sleep": 9
+ },
+ "kinds": {
+  "obs": 181,
+  "treat": 208,
+  "support": 32,
+  "diag": 13
+ },
+ "source": "ClinicalTrials.gov API v2"
+}

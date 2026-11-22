@@ -1,0 +1,32 @@
+{
+ "built": "2026-11-22T19:13:07Z",
+ "country": "Italy",
+ "area": "neurology",
+ "studies": 704,
+ "registryTotal": 4677,
+ "sites": 2169,
+ "hcOnly": 0,
+ "categories": {
+  "neuromuscular": 118,
+  "stroke": 109,
+  "movement": 101,
+  "braintumour": 68,
+  "neuroinfect": 17,
+  "als": 32,
+  "ms": 59,
+  "dementia": 129,
+  "epilepsy": 32,
+  "headache": 33,
+  "injury": 40,
+  "childneuro": 63,
+  "sleep": 27,
+  "generalneuro": 8
+ },
+ "kinds": {
+  "obs": 292,
+  "treat": 295,
+  "support": 88,
+  "diag": 29
+ },
+ "source": "ClinicalTrials.gov API v2"
+}

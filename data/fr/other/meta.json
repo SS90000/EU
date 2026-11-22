@@ -1,0 +1,35 @@
+{
+ "built": "2026-11-22T19:12:16Z",
+ "country": "France",
+ "area": "other",
+ "studies": 4465,
+ "registryTotal": 7388,
+ "sites": 14953,
+ "hcOnly": 0,
+ "categories": {
+  "heart": 803,
+  "metabolic": 464,
+  "women": 481,
+  "genetic": 499,
+  "pain": 787,
+  "mental": 510,
+  "kidney": 343,
+  "immune": 486,
+  "blood": 192,
+  "infection": 496,
+  "healthy": 121,
+  "lung": 500,
+  "digestive": 353,
+  "skin": 483,
+  "eyeent": 302,
+  "musculoskeletal": 742,
+  "general": 379
+ },
+ "kinds": {
+  "obs": 1689,
+  "support": 1223,
+  "treat": 1249,
+  "diag": 304
+ },
+ "source": "ClinicalTrials.gov API v2"
+}
