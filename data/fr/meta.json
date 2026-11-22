@@ -1,24 +1,24 @@
 {
- "built": "2026-11-22T19:12:16Z",
+ "built": "2026-11-22T22:31:05Z",
  "country": "France",
- "studies": 7388,
+ "studies": 8871,
  "registryTotal": 7388,
  "areas": {
   "oncology": {
-   "studies": 1944,
-   "sites": 12843
+   "studies": 2556,
+   "sites": 19914
   },
   "neurology": {
-   "studies": 1181,
-   "sites": 3804
+   "studies": 1357,
+   "sites": 5040
   },
   "other": {
-   "studies": 4465,
-   "sites": 14953
+   "studies": 5180,
+   "sites": 21284
   },
   "rare": {
-   "studies": 1471,
-   "sites": 7412
+   "studies": 2044,
+   "sites": 12561
   }
  },
  "hcOnly": 0,
@@ -28,5 +28,9 @@
   "ENROLLING_BY_INVITATION": 124,
   "SUSPENDED": 71
  },
- "source": "ClinicalTrials.gov API v2"
+ "otherRegistries": {
+  "ctis": 1463,
+  "isrctn": 20
+ },
+ "source": "ClinicalTrials.gov API v2; EU CTIS; ISRCTN"
 }

@@ -1,24 +1,24 @@
 {
- "built": "2026-11-22T19:12:37Z",
+ "built": "2026-11-22T22:34:28Z",
  "country": "Germany",
- "studies": 3154,
+ "studies": 4357,
  "registryTotal": 3154,
  "areas": {
   "oncology": {
-   "studies": 1029,
-   "sites": 7813
+   "studies": 1452,
+   "sites": 12219
   },
   "neurology": {
-   "studies": 434,
-   "sites": 1818
+   "studies": 578,
+   "sites": 2824
   },
   "other": {
-   "studies": 1772,
-   "sites": 7275
+   "studies": 2427,
+   "sites": 11602
   },
   "rare": {
-   "studies": 790,
-   "sites": 4260
+   "studies": 1274,
+   "sites": 7703
   }
  },
  "hcOnly": 0,
@@ -28,5 +28,9 @@
   "ENROLLING_BY_INVITATION": 146,
   "SUSPENDED": 56
  },
- "source": "ClinicalTrials.gov API v2"
+ "otherRegistries": {
+  "ctis": 1180,
+  "isrctn": 23
+ },
+ "source": "ClinicalTrials.gov API v2; EU CTIS; ISRCTN"
 }
