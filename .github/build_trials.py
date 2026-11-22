@@ -271,6 +271,7 @@ def load_rare_names():
 
 RARE = set()
 RARE_HITS = {}
+ALT_IDS = set()  # other registry numbers that ClinicalTrials.gov records list (EU CT, ISRCTN, ...)
 RARE_PHRASE = re.compile(r"\brare (?:disease|disorder|genetic|cancer|tumou?r)s?\b|\borphan (?:disease|drug)", re.I)
 
 
@@ -560,6 +561,8 @@ def write_area(area, rows, built, total):
             row["x"] = r["x"]
         if r.get("hc"):
             row["hc"], row["os"] = r["hc"], r["os"]
+        if r.get("src"):
+            row["src"] = r["src"]
         row["s"] = s
         out.append(row)
     d = os.path.join(OUT, area)
@@ -575,7 +578,7 @@ def write_area(area, rows, built, total):
             cats[c] = cats.get(c, 0) + 1
         kinds[r["k"]] = kinds.get(r["k"], 0) + 1
     meta = {"built": built, "country": COUNTRY, "area": area, "studies": len(out), "registryTotal": total,
-            "sites": sum(len(r["s"]) for r in out), "hcOnly": sum(1 for r in out if r.get("hc")), "categories": cats, "kinds": kinds, "source": "ClinicalTrials.gov API v2"}
+            "sites": sum(len(r["s"]) for r in out), "bySource": {k: sum(1 for r in out if r.get("src", "ctgov") == k) for k in ("ctgov", "ctis", "isrctn")}, "hcOnly": sum(1 for r in out if r.get("hc")), "categories": cats, "kinds": kinds, "source": "ClinicalTrials.gov API v2"}
     with open(os.path.join(d, "meta.json"), "w", encoding="utf-8") as f:
         json.dump(meta, f, ensure_ascii=False, indent=1)
     log(f"{area}: {meta['studies']} studies at {meta['sites']} sites; " +
@@ -596,6 +599,10 @@ def main():
             continue
         for st in val:
             seen += 1
+            for sid in ((st.get("protocolSection", {}).get("identificationModule", {}) or {}).get("secondaryIdInfos") or []):
+                v = re.sub(r"\s+", "", (sid.get("id") or "")).upper()
+                if v:
+                    ALT_IDS.add(v)
             row, detail = build(st)
             if not row:
                 continue
@@ -639,6 +646,24 @@ def main():
             log(f"Added {hc_added} Health Canada-authorized trials whose Canadian sites are not listed yet")
         except Exception as e:
             log(f"Health Canada step skipped ({e!r}); the registry data is still complete")
+    eu_counts = {}
+    if COUNTRY in ("France", "Germany", "Italy", "Spain", "United Kingdom"):
+        try:
+            import eu_registries
+            skip = keep | ALT_IDS | {re.sub(r"^ISRCTN", "", x) for x in ALT_IDS if x.startswith("ISRCTN")}
+            skip |= {"ISRCTN" + x for x in ALT_IDS if re.fullmatch(r"\d{8}", x)}
+            extra, eu_counts = eu_registries.run(sys.modules[__name__], skip, rows)
+            for row, detail in extra:
+                rows.append(row)
+                keep.add(row["id"])
+                path = os.path.join(tdir, row["id"] + ".json")
+                text = json.dumps(detail, ensure_ascii=False, separators=(",", ":"))
+                if not os.path.exists(path) or open(path, encoding="utf-8").read() != text:
+                    with open(path, "w", encoding="utf-8") as f:
+                        f.write(text)
+            log(f"Added {len(extra)} trials from European registries: " + ", ".join(f"{k} {v}" for k, v in eu_counts.items()))
+        except Exception as e:
+            log(f"European registries step skipped ({e!r}); the ClinicalTrials.gov data is still complete")
     left_out = not_included_counts()
     log("Left out (not open to new participants): " + ", ".join(f"{k} {v}" for k, v in left_out.items()))
     top = sorted(RARE_HITS.items(), key=lambda kv: -kv[1])[:40]
@@ -658,8 +683,9 @@ def main():
     with open(os.path.join(OUT, "meta.json"), "w", encoding="utf-8") as f:
         json.dump({"built": built, "country": COUNTRY, "studies": len(rows), "registryTotal": total,
                    "areas": {a: {"studies": m["studies"], "sites": m["sites"]} for a, m in metas.items()},
-                   "hcOnly": hc_added, "hcNoRegistry": hc_noreg, "notIncluded": left_out,
-                   "source": "ClinicalTrials.gov API v2" + ("; Health Canada clinical trial search portal" if hc_added else "")}, f, ensure_ascii=False, indent=1)
+                   "hcOnly": hc_added, "hcNoRegistry": hc_noreg, "notIncluded": left_out, "otherRegistries": eu_counts,
+                   "source": "ClinicalTrials.gov API v2" + ("; Health Canada clinical trial search portal" if hc_added else "")
+                             + ("; EU CTIS" if eu_counts.get("ctis") else "") + ("; ISRCTN" if eu_counts.get("isrctn") else "")}, f, ensure_ascii=False, indent=1)
     log(f"Wrote {len(rows)} studies; removed {removed} closed studies")
 
 
