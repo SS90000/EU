@@ -243,7 +243,7 @@ def ctis_rows(country, skip):
         if tr["exc"]:
             crit += "\nExclusion criteria:\n" + "\n".join(f"{i + 1}. {x}" for i, x in enumerate(tr["exc"]))
         out.append({"id": n, "src": "ctis", "title": tr["t"], "official": tr["o"], "ac": tr["ac"],
-                    "conds": tr["conds"] + tr["terms"], "anc": tr["ta"], "rare": tr["rare"],
+                    "conds": list({c.strip().lower(): c.strip() for c in reversed(tr["conds"] + tr["terms"]) if c.strip()}.values())[::-1], "anc": tr["ta"], "rare": tr["rare"],
                     "summary": ("Main objective: " + tr["obj"]) if tr["obj"] and not tr["obj"].lower().startswith(("main", "primary")) else tr["obj"],
                     "crit": crit, "kind": "treat", "ph": tr["ph"], "a0": a0, "a1": a1,
                     "sx": "F" if "female" in sx and "male" not in sx.replace("female", "") else "M" if "male" in sx and "female" not in sx else "A",
