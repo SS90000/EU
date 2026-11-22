@@ -17,6 +17,7 @@
 <div class="wrap">
   <main>
     <section class="panel">
+      <div class="langpick" id="langPick"></div>
       <h1 id="h1"></h1>
       <p class="lede" id="lede"></p>
       <div class="areas" id="countries"></div>
@@ -55,7 +56,13 @@
   };
   const ORDER = ["fr", "de", "it", "es", "uk"];
   const counts = {};
-  let lang = (() => { try { const q = new URLSearchParams(location.search).get("lang"); if (LANGS.includes(q)) return q; } catch (e) {} const n = (navigator.language || "en").slice(0, 2); return LANGS.includes(n) ? n : "en"; })();
+  const NAMES = { en: "English", fr: "Français", de: "Deutsch", it: "Italiano", es: "Español" };
+  const LBL = { en: "Language", fr: "Langue", de: "Sprache", it: "Lingua", es: "Idioma" };
+  let lang = (() => {
+    try { const q = new URLSearchParams(location.search).get("lang"); if (LANGS.includes(q)) return q; } catch (e) {}
+    try { const m = localStorage.getItem("ctf-lang"); if (LANGS.includes(m)) return m; } catch (e) {}
+    const n = (navigator.language || "en").slice(0, 2); return LANGS.includes(n) ? n : "en"; })();
+  const pick = l => { lang = l; try { localStorage.setItem("ctf-lang", l); } catch (e) {} render(); };
   const $ = id => document.getElementById(id);
   function render() {
     const t = T[lang], i = LI(lang);
@@ -63,8 +70,11 @@
     $("sub").textContent = t.sub; $("h1").textContent = t.h1; $("lede").textContent = t.lede; $("note").textContent = t.note; $("foot").textContent = t.foot;
     const g = $("langGroup");
     g.innerHTML = LANGS.map(l => `<button type="button" data-lang="${l}" lang="${l}" aria-pressed="${l === lang}">${l.toUpperCase()}</button>`).join("");
-    g.querySelectorAll("[data-lang]").forEach(b => b.onclick = () => { lang = b.dataset.lang; render(); });
-    $("countries").innerHTML = ORDER.map(cc => { const c = EU_COUNTRIES[cc]; const q = c.langs.includes(lang) && lang !== c.langs[0] ? `?lang=${lang}` : "";
+    g.querySelectorAll("[data-lang]").forEach(b => b.onclick = () => pick(b.dataset.lang));
+    const lp = $("langPick");
+    lp.innerHTML = `<span>${LBL[lang]}:</span>` + LANGS.map(l => `<button type="button" data-l="${l}" lang="${l}" aria-pressed="${l === lang}">${NAMES[l]}</button>`).join("");
+    lp.querySelectorAll("[data-l]").forEach(b => b.onclick = () => pick(b.dataset.l));
+    $("countries").innerHTML = ORDER.map(cc => { const c = EU_COUNTRIES[cc]; const q = c.langs.includes(lang) ? `?lang=${lang}` : "";
       return `<a class="areacard" href="${cc}/${q}"><b>${c.name[i]}</b><span class="n">${counts[cc] != null ? t.studies(counts[cc].toLocaleString(LOC[lang])) : "…"}</span><span>${c.langs.map(l => l.toUpperCase()).join(" · ")}</span><span class="go">${t.go}</span></a>`; }).join("");
   }
   render();

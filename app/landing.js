@@ -34,7 +34,13 @@
           note: d => `Beta. No es consejo médico. Datos de ClinicalTrials.gov, actualizados a diario${d ? ` (última actualización: ${d})` : ""}. Los ensayos registrados solo en el sistema europeo CTIS u otros registros nacionales aún no se incluyen. En caso de urgencia, llame al ${COUNTRY.emergency}.`,
           foot: `Gestionado por ${ORG.name}. Sin relación con ClinicalTrials.gov ni con la Biblioteca Nacional de Medicina de EE. UU., y sin su respaldo.` }
   };
-  let lang = (() => { try { const q = new URLSearchParams(location.search).get("lang"); if (COUNTRY.langs.includes(q)) return q; } catch (e) {} return COUNTRY.langs[0]; })();
+  const NAMES = { en: "English", fr: "Français", de: "Deutsch", it: "Italiano", es: "Español" };
+  const LBL = { en: "Language", fr: "Langue", de: "Sprache", it: "Lingua", es: "Idioma" };
+  let lang = (() => {
+    try { const q = new URLSearchParams(location.search).get("lang"); if (COUNTRY.langs.includes(q)) return q; } catch (e) {}
+    try { const m = localStorage.getItem("ctf-lang"); if (COUNTRY.langs.includes(m)) return m; } catch (e) {}
+    return COUNTRY.langs[0]; })();
+  const pick = l => { lang = l; try { localStorage.setItem("ctf-lang", l); } catch (e) {} render(); };
   let META = null;
   const $ = id => document.getElementById(id);
   const loc = () => COUNTRY.locales[lang] || lang;
@@ -45,10 +51,15 @@
     $("sub").textContent = `${COUNTRY.name[i]} · Beta`;
     const g = $("langGroup"); g.hidden = COUNTRY.langs.length < 2;
     g.innerHTML = COUNTRY.langs.map(l => `<button type="button" data-lang="${l}" lang="${l}" aria-pressed="${l === lang}">${l.toUpperCase()}</button>`).join("");
-    g.querySelectorAll("[data-lang]").forEach(b => b.onclick = () => { lang = b.dataset.lang; render(); });
+    g.querySelectorAll("[data-lang]").forEach(b => b.onclick = () => pick(b.dataset.lang));
+    let lp = $("langPick");
+    if (!lp) { lp = document.createElement("div"); lp.id = "langPick"; lp.className = "langpick"; $("h1").before(lp); }
+    lp.hidden = COUNTRY.langs.length < 2;
+    lp.innerHTML = `<span>${LBL[lang]}:</span>` + COUNTRY.langs.map(l => `<button type="button" data-l="${l}" lang="${l}" aria-pressed="${l === lang}">${NAMES[l]}</button>`).join("");
+    lp.querySelectorAll("[data-l]").forEach(b => b.onclick = () => pick(b.dataset.l));
     $("h1").textContent = t.h1(COUNTRY.inName[i]); $("lede").textContent = t.lede;
     document.querySelectorAll("[data-t]").forEach(el => el.textContent = t[el.dataset.t]);
-    document.querySelectorAll("a.areacard").forEach(a => a.href = a.dataset.href + (lang !== COUNTRY.langs[0] ? `?lang=${lang}` : ""));
+    document.querySelectorAll("a.areacard").forEach(a => a.href = a.dataset.href + `?lang=${lang}`);
     $("allLink").href = "../" + (lang !== "en" ? `?lang=${lang}` : "");
     document.querySelectorAll("[data-n]").forEach(el => { const a = META && META.areas && META.areas[el.dataset.n]; el.textContent = a ? t.studies(a.studies.toLocaleString(loc())) : "…"; });
     const d = META ? new Date(META.built).toLocaleDateString(loc(), { year: "numeric", month: "short", day: "numeric" }) : "";

@@ -148,7 +148,7 @@ fr: {
 
 /* wording that depends on the area, the country or the language */
 const XT = {
-en: { beta: "Beta",
+en: { beta: "Beta", backAll: "← All sections", langL: "Language",
   band: (n, d, st, inN) => `Beta. Not medical advice. Lists all ${n} ${st} with sites ${inN} on ClinicalTrials.gov, updated daily (last update ${d}).`,
   b3pre: "Study details may be out of date. ",
   hcBand: n => ` Also includes ${n} trials authorized by Health Canada whose Canadian sites are not listed yet.`,
@@ -162,7 +162,7 @@ en: { beta: "Beta",
   sumQH: "QUESTIONS FOR MY DOCTOR",
   sumQs: stage => ["Is any of these studies a good fit for my situation?", stage ? "Do my cancer type and stage match their criteria?" : "Does my condition match their criteria?",
     "Would taking part delay my usual treatment?", "Can you refer me to the study team or contact them for me?"] },
-fr: { beta: "Bêta",
+fr: { beta: "Bêta", backAll: "← Toutes les sections", langL: "Langue",
   band: (n, d, st, inN) => `Bêta. Ne constitue pas un avis médical. Présente les ${n} ${st} ayant des sites ${inN} sur ClinicalTrials.gov, mises à jour chaque jour (dernière mise à jour : ${d}).`,
   b3pre: "Les détails des études peuvent être dépassés. ",
   hcBand: n => ` Comprend aussi ${n} essais autorisés par Santé Canada dont les sites canadiens ne sont pas encore publiés.`,
@@ -187,12 +187,17 @@ for (const lg of Object.keys(T)) {
   x.b3 = y.b3pre + P(A.tagNote, i);
   x.cat = P(A.catLabel, i); x.catAny = P(A.catAny, i); x.prov = P(COUNTRY.region, i); x.provAny = P(COUNTRY.regionAny, i);
   x.brand = P(A.brand, i);
+  x.backAll = y.backAll; x.langL = y.langL;
   for (const k of ["studyContact", "noStudyContact", "ivt", "hcTag", "hcWhere", "hcFlag", "hcFlagP", "hcLink"]) x[k] = y[k];
   x.sumX = y;
 }
 
 /* ---------- state ---------- */
-const LANG0 = (() => { try { const q = new URLSearchParams(location.search).get("lang"); if (COUNTRY.langs.includes(q)) return q; } catch (e) {} return COUNTRY.langs[0]; })();
+const LANG0 = (() => {
+  try { const q = new URLSearchParams(location.search).get("lang"); if (COUNTRY.langs.includes(q)) return q; } catch (e) {}
+  try { const m = localStorage.getItem("ctf-lang"); if (COUNTRY.langs.includes(m)) return m; } catch (e) {}
+  return COUNTRY.langs[0]; })();
+const saveLang = l => { try { localStorage.setItem("ctf-lang", l); } catch (e) {} };
 const S = { lang: LANG0, view: "gate", consent: false, legal: "terms", prev: "gate", sort: "best", shown: 20, city: null,
   saved: new Set(), open: new Set(), showHidden: false,
   f: { cat: "", many: A.many, prov: "", near: "", lat: null, lon: null, loc: false, dist: "100", age: "", sex: "", spread: "", stage: "", kinds: { treat: true, diag: true, support: true, obs: true }, closed: false } };
@@ -304,7 +309,11 @@ function render(keepScroll) {
   $("brandName").textContent = t("brand"); document.title = t("brand"); $("brandSub").textContent = t("sub");
   const lgBox = $("langGroup"); lgBox.hidden = COUNTRY.langs.length < 2; if (!COUNTRY.langs.includes(S.lang)) S.lang = COUNTRY.langs[0];
   lgBox.innerHTML = COUNTRY.langs.map(l => `<button type="button" data-lang="${l}" lang="${l}" aria-pressed="${S.lang === l}">${l.toUpperCase()}</button>`).join("");
-  lgBox.querySelectorAll("[data-lang]").forEach(b => b.onclick = () => { S.lang = b.dataset.lang; render(true); });
+  lgBox.setAttribute("aria-label", t("langL"));
+  lgBox.querySelectorAll("[data-lang]").forEach(b => b.onclick = () => { S.lang = b.dataset.lang; saveLang(S.lang); render(true); });
+  let back = $("backLink");
+  if (!back) { back = document.createElement("a"); back.id = "backLink"; back.className = "backlink"; document.querySelector("header.top .wrap").prepend(back); }
+  back.href = "../" + (S.lang !== COUNTRY.langs[0] ? `?lang=${S.lang}` : ""); back.textContent = t("backAll");
   $("demoPill").textContent = t("pill");
   $("demoBand").textContent = META ? t("band")(META.studies, fmtDate(META.built.slice(0, 10))) : t("loading");
   $("f-terms").textContent = t("fTerms"); $("f-privacy").textContent = t("fPriv"); $("f-data").textContent = t("fData");
