@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Clinical Trial Finder</title>
+<meta name="description" content="Beta tools for finding open clinical trials: cancer, neurological conditions, rare diseases and other health conditions. Not medical advice.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='15' fill='%230f5c72'/%3E%3Ccircle cx='14' cy='14' r='6' fill='none' stroke='white' stroke-width='3'/%3E%3Cpath d='M18.5 18.5l6 6' stroke='white' stroke-width='3' stroke-linecap='round'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="../app/style.css">
+<script>const COUNTRY_CODE = "es"; const DATA = "../data/es/";</script>
+</head>
+<body>
+<header class="top"><div class="wrap">
+  <div class="brand"><b>Clinical Trial Finder</b><span id="sub"></span></div>
+  <span class="pill">Beta</span>
+  <div class="lang" role="group" aria-label="Language" id="langGroup"></div>
+</div></header>
+<div class="wrap">
+  <main>
+    <section class="panel">
+      <p><a id="allLink" href="../" data-t="all"></a></p>
+      <h1 id="h1"></h1>
+      <p class="lede" id="lede"></p>
+      <div class="areas">
+        <a class="areacard" data-href="oncology/" href="oncology/"><b data-t="onc"></b><span class="n" data-n="oncology">…</span><span data-t="oncP"></span><span class="go" data-t="go"></span></a>
+        <a class="areacard" data-href="neurology/" href="neurology/"><b data-t="neu"></b><span class="n" data-n="neurology">…</span><span data-t="neuP"></span><span class="go" data-t="go"></span></a>
+        <a class="areacard" data-href="other/" href="other/"><b data-t="oth"></b><span class="n" data-n="other">…</span><span data-t="othP"></span><span class="go" data-t="go"></span></a>
+        <a class="areacard" data-href="rare/" href="rare/"><b data-t="rar"></b><span class="n" data-n="rare">…</span><span data-t="rarP"></span><span class="go" data-t="go"></span></a>
+      </div>
+      <p class="help" id="note"></p>
+    </section>
+  </main>
+  <footer>
+    <p id="foot"></p>
+    <p>© 2026 Salish Seven LLC. All rights reserved. Salish Seven™ is a trademark of Salish Seven LLC.</p>
+  </footer>
+</div>
+<script src="../app/settings.js"></script>
+<script src="../app/countries.js"></script>
+<script src="../app/landing.js"></script>
+</body>
+</html>
