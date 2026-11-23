@@ -435,7 +435,21 @@ def drks_export(status):
     if "resultForm" not in f.forms:
         msg = re.sub(r"\s+", " ", re.sub(r"<[^>]+>", " ", raw.decode("utf-8", "replace")))
         raise RuntimeError("DRKS search page changed: " + msg[msg.find("German Clinical Trials Register"):][:300])
-    rf = f.forms["resultForm"]
+    def result_form(raw):
+        f = Forms(); f.feed(raw.decode("utf-8", "replace"))
+        rf = f.forms["resultForm"]
+        vs = re.search(rb'name="jakarta\.faces\.ViewState"[^>]*value="([^"]+)"', raw) or re.search(rb'value="([^"]+)"[^>]*name="jakarta\.faces\.ViewState"', raw)
+        if vs and "jakarta.faces.ViewState" not in rf["fields"]:
+            rf["fields"]["jakarta.faces.ViewState"] = vs.group(1).decode()
+        return rf
+
+    rf = result_form(raw)
+    if not any(b.endswith("downloadTrial") for b in rf["buttons"]):
+        # the format choice and the terms box appear once the Download button is pressed
+        fields = dict(rf["fields"])
+        fields[rf["buttons"][0]] = ""
+        url, raw = page(urllib.parse.urljoin(url, rf["action"]), fields)
+        rf = result_form(raw)
     fields = dict(rf["fields"])
     fields["selectedType"] = "JSON"
     btn = next((b for b in rf["buttons"] if b.endswith("downloadTrial")), None)
