@@ -3,7 +3,7 @@
 (() => {
   const X = {
     oncology: {
-      brand: ["Studienfinder Krebs", "Ricerca studi clinici sul cancro", "Buscador de ensayos sobre cáncer"],
+      brand: ["Find My Trial™ · Krebs", "Find My Trial™ · Tumori", "Find My Trial™ · Cáncer"],
       short: ["Alle Krebsarten", "Tutti i tumori", "Todos los cánceres"],
       studies: ["offene Krebsstudien", "studi oncologici aperti", "estudios de cáncer abiertos"],
       h1: c => [`Klinische Krebsstudien ${c[2]} finden`, `Trova studi clinici sul cancro ${c[3]}`, `Encuentre ensayos clínicos sobre cáncer ${c[4]}`],
@@ -28,7 +28,7 @@
       }
     },
     neurology: {
-      brand: ["Studienfinder Neurologie", "Ricerca studi clinici in neurologia", "Buscador de ensayos en neurología"],
+      brand: ["Find My Trial™ · Neurologie", "Find My Trial™ · Neurologia", "Find My Trial™ · Neurología"],
       short: ["Neurologische Erkrankungen", "Malattie neurologiche", "Enfermedades neurológicas"],
       studies: ["offene Studien zu neurologischen Erkrankungen", "studi aperti su malattie neurologiche", "estudios abiertos sobre enfermedades neurológicas"],
       h1: c => [`Klinische Studien zu neurologischen Erkrankungen ${c[2]} finden`, `Trova studi clinici su malattie neurologiche ${c[3]}`, `Encuentre ensayos clínicos sobre enfermedades neurológicas ${c[4]}`],
@@ -50,13 +50,13 @@
       }
     },
     other: {
-      brand: ["Studienfinder", "Ricerca studi clinici", "Buscador de ensayos clínicos"],
+      brand: ["Find My Trial™ · Weitere Erkrankungen", "Find My Trial™ · Altre malattie", "Find My Trial™ · Otras enfermedades"],
       short: ["Andere Erkrankungen", "Altre malattie", "Otras enfermedades"],
       studies: ["offene Studien zu anderen Erkrankungen", "studi aperti su altre malattie", "estudios abiertos sobre otras enfermedades"],
       h1: c => [`Klinische Studien zu anderen Erkrankungen ${c[2]} finden`, `Trova studi clinici su altre malattie ${c[3]}`, `Encuentre ensayos clínicos sobre otras enfermedades ${c[4]}`],
       lede: ["Suchen Sie offene klinische Studien zu Herz- und Lungenerkrankungen, Diabetes, psychischer Gesundheit, Infektionen, Schwangerschaft, seltenen Erkrankungen und vielen anderen Erkrankungen, auch Studien für gesunde Freiwillige. Krebs und neurologische Erkrankungen haben eigene Finder.",
              "Cerca studi clinici aperti su cuore e polmoni, diabete, salute mentale, infezioni, gravidanza, malattie rare e molte altre malattie, compresi studi per volontari sani. Cancro e malattie neurologiche hanno i propri strumenti.",
-             "Busque ensayos y estudios clínicos abiertos sobre corazón y pulmones, diabetes, salud mental, infecciones, embarazo, enfermedades raras y muchas otras, incluidos estudios para voluntarios sanos. El cáncer y las enfermedades neurológicas tienen sus propios buscadores."],
+             "Busque ensayos y estudios clínicos abiertos sobre corazón y pulmones, diabetes, salud mental, infecciones, embarazo, enfermedades raras y muchas otras, incluidos estudios para voluntarios sanos. El cáncer y las enfermedades neurológicas tienen sus propias áreas."],
       tagNote: ["Das Gebiet jeder Studie wird automatisch erkannt und kann falsch sein.", "L'area di ogni studio è rilevata automaticamente e può essere errata.", "El área de cada estudio se detecta automáticamente y puede ser errónea."],
       catLabel: ["Gebiet", "Area", "Área"], catAny: ["Jede Erkrankung", "Qualsiasi malattia", "Cualquier enfermedad"],
       about: ["zu einer anderen Erkrankung als Krebs oder einer neurologischen Erkrankung", "su una malattia diversa dal cancro o da una malattia neurologica", "sobre una enfermedad distinta del cáncer o de una enfermedad neurológica"],
@@ -73,13 +73,13 @@
       }
     },
     rare: {
-      brand: ["Studienfinder Seltene Erkrankungen", "Ricerca studi sulle malattie rare", "Buscador de ensayos sobre enfermedades raras"],
+      brand: ["Find My Trial™ · Seltene Erkrankungen", "Find My Trial™ · Malattie rare", "Find My Trial™ · Enfermedades raras"],
       short: ["Seltene Erkrankungen", "Malattie rare", "Enfermedades raras"],
       studies: ["offene Studien zu seltenen Erkrankungen", "studi aperti su malattie rare", "estudios abiertos sobre enfermedades raras"],
       h1: c => [`Klinische Studien zu seltenen Erkrankungen ${c[2]} finden`, `Trova studi clinici sulle malattie rare ${c[3]}`, `Encuentre ensayos clínicos sobre enfermedades raras ${c[4]}`],
       lede: ["Suchen Sie offene klinische Studien zu seltenen Erkrankungen, darunter seltene Krebsarten und seltene neurologische, genetische, Blut- und Stoffwechselerkrankungen. Diese Studien erscheinen auch in den anderen Findern.",
-             "Cerca studi clinici aperti sulle malattie rare, compresi tumori rari e malattie rare neurologiche, genetiche, del sangue e del metabolismo. Questi studi compaiono anche negli altri strumenti.",
-             "Busque ensayos y estudios clínicos abiertos sobre enfermedades raras, incluidos cánceres raros y enfermedades raras neurológicas, genéticas, de la sangre y metabólicas. Estos estudios también aparecen en los otros buscadores."],
+             "Cerca studi clinici aperti sulle malattie rare, compresi tumori rari e malattie rare neurologiche, genetiche, del sangue e del metabolismo. Questi studi compaiono anche nelle altre aree.",
+             "Busque ensayos y estudios clínicos abiertos sobre enfermedades raras, incluidos cánceres raros y enfermedades raras neurológicas, genéticas, de la sangre y metabólicas. Estos estudios también aparecen en las otras áreas."],
       tagNote: ["Seltene Erkrankungen werden automatisch erkannt, indem die Erkrankungen jeder Studie mit der Orphanet-Liste verglichen werden, und können falsch sein.", "Le malattie rare sono rilevate automaticamente confrontando le malattie di ogni studio con l'elenco di Orphanet, e possono essere errate.", "Las enfermedades raras se detectan automáticamente comparando las enfermedades de cada estudio con la lista de Orphanet, y pueden ser erróneas."],
       catLabel: ["Art der seltenen Erkrankung", "Tipo di malattia rara", "Tipo de enfermedad rara"], catAny: ["Jede seltene Erkrankung", "Qualsiasi malattia rara", "Cualquier enfermedad rara"],
       about: ["zu einer seltenen Erkrankung", "su una malattia rara", "sobre una enfermedad rara"],

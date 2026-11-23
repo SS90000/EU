@@ -1,6 +1,6 @@
-# Clinical Trial Finder · Europe (beta)
+# Find My Trial™ · Europe (pilot)
 
-Patient-facing finders for open clinical trials in France, Germany, Italy, Spain and the United Kingdom, by Salish Seven.
+Find My Trial™: patient-facing search for open clinical trials in France, Germany, Italy, Spain and the United Kingdom, by Salish Seven.
 
 - Country picker: https://ss90000.github.io/EU/
 - Each country: `/fr/`, `/de/`, `/it/`, `/es/`, `/uk/`, with four sections each: `oncology/`, `neurology/`, `other/`, `rare/`
@@ -21,3 +21,10 @@ A trial whose CTIS or ISRCTN record gives a ClinicalTrials.gov number already in
 - Studies not open to new participants (active but not recruiting, by invitation, suspended, completed). Counts are in each `data/<country>/meta.json` under `notIncluded`.
 
 Not medical advice.
+
+## Quality checks
+
+- **Duplicates.** A trial listed in more than one registry is shown once: CTIS and ISRCTN records are dropped when they give a ClinicalTrials.gov number already listed, or when a ClinicalTrials.gov record names them as a secondary ID.
+- **Human review (November 2026).** A person checked 10 trials from the new registries (two per country, EU CTIS and ISRCTN) against the registry record. 1 was in the wrong section (a stop-smoking study offered at lung cancer screening, filed under cancer) and none had the wrong intervention type. The rule was fixed for all three sites. The ClinicalTrials.gov part uses the same rules as Canada and the US, where 45 reviewed studies had 4 in the wrong section, all fixed.
+
+The sorting into sections and categories is automatic (text matching), so some studies will still be in the wrong place. Each pattern found in a review is fixed in `.github/build_trials.py` so that every similar study moves too, not just the one reviewed.

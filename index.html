@@ -3,15 +3,15 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Clinical Trial Finder · Europe</title>
-<meta name="description" content="Beta tools for finding open clinical trials in France, Germany, Italy, Spain and the United Kingdom. Not medical advice.">
+<title>Find My Trial™ · Europe</title>
+<meta name="description" content="Pilot tools for finding open clinical trials in France, Germany, Italy, Spain and the United Kingdom. Not medical advice.">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='15' fill='%230f5c72'/%3E%3Ccircle cx='14' cy='14' r='6' fill='none' stroke='white' stroke-width='3'/%3E%3Cpath d='M18.5 18.5l6 6' stroke='white' stroke-width='3' stroke-linecap='round'/%3E%3C/svg%3E">
 <link rel="stylesheet" href="app/style.css">
 </head>
 <body>
 <header class="top"><div class="wrap">
-  <div class="brand"><b>Clinical Trial Finder</b><span id="sub"></span></div>
-  <span class="pill">Beta</span>
+  <div class="brand"><b>Find My Trial™</b><span id="sub"></span></div>
+  <span class="pill">Pilot</span>
   <div class="lang" role="group" aria-label="Language" id="langGroup"></div>
 </div></header>
 <div class="wrap">
@@ -38,20 +38,20 @@
   const LANGS = ["en", "fr", "de", "it", "es"], LI = l => Math.max(0, LANGS.indexOf(l));
   const LOC = { en: "en-GB", fr: "fr-FR", de: "de-DE", it: "it-IT", es: "es-ES" };
   const T = {
-    en: { sub: "Europe · Beta", h1: "Find clinical trials in Europe", lede: "Choose a country. Each country has finders for cancer, neurological conditions, rare diseases and other conditions, with every site's status and contact and the full eligibility criteria.", studies: n => `${n} open studies`, go: "Choose →",
-          note: "Beta. Not medical advice. Data from ClinicalTrials.gov, the EU's CTIS and ISRCTN, updated daily. Trials registered only in national registries (such as Germany's DRKS) are not included yet. In an emergency, call 112 (999 in the UK).",
+    en: { sub: "Europe · Pilot", h1: "Find clinical trials in Europe", lede: "Choose a country. Each country has sections for cancer, neurological conditions, rare diseases and other conditions, with every site's status and contact and the full eligibility criteria.", studies: n => `${n} open studies`, go: "Choose →",
+          note: "Pilot. Not medical advice. Data from ClinicalTrials.gov, the EU's CTIS and ISRCTN, updated daily. Trials registered only in national registries (such as Germany's DRKS) are not included yet. In an emergency, call 112 (999 in the UK).",
           foot: `Operated by ${ORG.name}. Not affiliated with or endorsed by ClinicalTrials.gov or the U.S. National Library of Medicine.` },
-    fr: { sub: "Europe · Bêta", h1: "Trouver des essais cliniques en Europe", lede: "Choisissez un pays. Chaque pays a des outils pour le cancer, les maladies neurologiques, les maladies rares et les autres maladies, avec le statut et le contact de chaque site et les critères d'admissibilité complets.", studies: n => `${n} études ouvertes`, go: "Choisir →",
-          note: "Bêta. Ne constitue pas un avis médical. Données de ClinicalTrials.gov, du CTIS européen et d'ISRCTN, mises à jour chaque jour. Les essais inscrits seulement dans des registres nationaux ne sont pas encore inclus. En cas d'urgence, composez le 112 (999 au Royaume-Uni).",
+    fr: { sub: "Europe · Pilote", h1: "Trouver des essais cliniques en Europe", lede: "Choisissez un pays. Chaque pays a des outils pour le cancer, les maladies neurologiques, les maladies rares et les autres maladies, avec le statut et le contact de chaque site et les critères d'admissibilité complets.", studies: n => `${n} études ouvertes`, go: "Choisir →",
+          note: "Pilote. Ne constitue pas un avis médical. Données de ClinicalTrials.gov, du CTIS européen et d'ISRCTN, mises à jour chaque jour. Les essais inscrits seulement dans des registres nationaux ne sont pas encore inclus. En cas d'urgence, composez le 112 (999 au Royaume-Uni).",
           foot: `Exploité par ${ORG.name}. Non affilié à ClinicalTrials.gov ni à la National Library of Medicine des États-Unis.` },
-    de: { sub: "Europa · Beta", h1: "Klinische Studien in Europa finden", lede: "Wählen Sie ein Land. Für jedes Land gibt es Finder für Krebs, neurologische Erkrankungen, seltene Erkrankungen und andere Erkrankungen, mit Status und Kontakt jedes Zentrums und den vollständigen Teilnahmekriterien.", studies: n => `${n} offene Studien`, go: "Auswählen →",
-          note: "Beta. Keine medizinische Beratung. Daten von ClinicalTrials.gov, dem EU-Register CTIS und ISRCTN, täglich aktualisiert. Studien, die nur in nationalen Registern wie dem DRKS stehen, sind noch nicht enthalten. Im Notfall rufen Sie 112 an (999 im Vereinigten Königreich).",
+    de: { sub: "Europa · Pilot", h1: "Klinische Studien in Europa finden", lede: "Wählen Sie ein Land. Für jedes Land gibt es Bereiche für Krebs, neurologische Erkrankungen, seltene Erkrankungen und andere Erkrankungen, mit Status und Kontakt jedes Zentrums und den vollständigen Teilnahmekriterien.", studies: n => `${n} offene Studien`, go: "Auswählen →",
+          note: "Pilot. Keine medizinische Beratung. Daten von ClinicalTrials.gov, dem EU-Register CTIS und ISRCTN, täglich aktualisiert. Studien, die nur in nationalen Registern wie dem DRKS stehen, sind noch nicht enthalten. Im Notfall rufen Sie 112 an (999 im Vereinigten Königreich).",
           foot: `Betrieben von ${ORG.name}. Nicht verbunden mit ClinicalTrials.gov oder der U.S. National Library of Medicine.` },
-    it: { sub: "Europa · Beta", h1: "Trova studi clinici in Europa", lede: "Scegli un paese. Ogni paese ha strumenti per il cancro, le malattie neurologiche, le malattie rare e le altre malattie, con lo stato e il contatto di ogni centro e i criteri di partecipazione completi.", studies: n => `${n} studi aperti`, go: "Scegli →",
-          note: "Beta. Non è un parere medico. Dati di ClinicalTrials.gov, del CTIS europeo e di ISRCTN, aggiornati ogni giorno. Gli studi registrati solo in registri nazionali non sono ancora inclusi. In caso di emergenza chiama il 112 (999 nel Regno Unito).",
+    it: { sub: "Europa · Pilota", h1: "Trova studi clinici in Europa", lede: "Scegli un paese. Ogni paese ha strumenti per il cancro, le malattie neurologiche, le malattie rare e le altre malattie, con lo stato e il contatto di ogni centro e i criteri di partecipazione completi.", studies: n => `${n} studi aperti`, go: "Scegli →",
+          note: "Pilota. Non è un parere medico. Dati di ClinicalTrials.gov, del CTIS europeo e di ISRCTN, aggiornati ogni giorno. Gli studi registrati solo in registri nazionali non sono ancora inclusi. In caso di emergenza chiama il 112 (999 nel Regno Unito).",
           foot: `Gestito da ${ORG.name}. Non affiliato a ClinicalTrials.gov né alla U.S. National Library of Medicine.` },
-    es: { sub: "Europa · Beta", h1: "Encuentre ensayos clínicos en Europa", lede: "Elija un país. Cada país tiene buscadores para cáncer, enfermedades neurológicas, enfermedades raras y otras enfermedades, con el estado y el contacto de cada centro y los criterios de participación completos.", studies: n => `${n} estudios abiertos`, go: "Elegir →",
-          note: "Beta. No es consejo médico. Datos de ClinicalTrials.gov, del CTIS europeo y de ISRCTN, actualizados a diario. Los ensayos registrados solo en registros nacionales aún no se incluyen. En caso de urgencia, llame al 112 (999 en el Reino Unido).",
+    es: { sub: "Europa · Piloto", h1: "Encuentre ensayos clínicos en Europa", lede: "Elija un país. Cada país tiene secciones para cáncer, enfermedades neurológicas, enfermedades raras y otras enfermedades, con el estado y el contacto de cada centro y los criterios de participación completos.", studies: n => `${n} estudios abiertos`, go: "Elegir →",
+          note: "Piloto. No es consejo médico. Datos de ClinicalTrials.gov, del CTIS europeo y de ISRCTN, actualizados a diario. Los ensayos registrados solo en registros nacionales aún no se incluyen. En caso de urgencia, llame al 112 (999 en el Reino Unido).",
           foot: `Gestionado por ${ORG.name}. Sin relación con ClinicalTrials.gov ni con la Biblioteca Nacional de Medicina de EE. UU.` }
   };
   const ORDER = ["fr", "de", "it", "es", "uk"];
