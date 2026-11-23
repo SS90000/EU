@@ -389,10 +389,19 @@ class Forms(html.parser.HTMLParser):
         elif tag == "button" and a.get("name"):
             self.forms[self.cur]["buttons"].append(a["name"])
         elif tag == "select" and a.get("name"):
-            self.sel = a["name"]
-            self.forms[self.cur]["fields"].setdefault(self.sel, "")
-        elif tag == "option" and self.sel and "selected" in a:
-            self.forms[self.cur]["fields"][self.sel] = a.get("value", "")
+            # a multiple select with nothing chosen sends nothing; a single one sends its first option
+            self.sel, self.multi, self.first = a["name"], "multiple" in a, True
+        elif tag == "option" and self.sel:
+            f = self.forms[self.cur]["fields"]
+            if "selected" in a:
+                if self.multi:
+                    f.setdefault(self.sel, [])
+                    f[self.sel].append(a.get("value", ""))
+                else:
+                    f[self.sel] = a.get("value", "")
+            elif self.first and not self.multi:
+                f.setdefault(self.sel, a.get("value", ""))
+            self.first = False
 
     def handle_endtag(self, tag):
         if tag == "select":
@@ -408,7 +417,7 @@ def drks_export(status):
     op.addheaders = [("User-Agent", UA)]
 
     def page(url, data=None):
-        body = urllib.parse.urlencode(data).encode() if data is not None else None
+        body = urllib.parse.urlencode(data, doseq=True).encode() if data is not None else None
         with op.open(url, data=body, timeout=300) as r:
             return r.geturl(), r.read()
 
@@ -421,6 +430,9 @@ def drks_export(status):
     fields[sf["buttons"][-1]] = ""  # the last button of the form is "Search"
     url, raw = page(urllib.parse.urljoin(url, sf["action"]), fields)
     f = Forms(); f.feed(raw.decode("utf-8", "replace"))
+    if "resultForm" not in f.forms:
+        msg = re.sub(r"\s+", " ", re.sub(r"<[^>]+>", " ", raw.decode("utf-8", "replace")))
+        raise RuntimeError("DRKS search page changed: " + msg[msg.find("German Clinical Trials Register"):][:300])
     rf = f.forms["resultForm"]
     fields = dict(rf["fields"])
     fields["selectedType"] = "JSON"
