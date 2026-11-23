@@ -11,7 +11,7 @@
 
   LEGAL.de = {
 terms: () => `<h2>Nutzungsbedingungen</h2>
-<p class="lede"><b>Gültig ab: 22. November 2026.</b> Bitte lesen Sie diese Bedingungen sorgfältig. Bei Abweichungen zwischen den Sprachfassungen gilt die englische Fassung.</p>
+<p class="lede"><b>Gültig ab: 23. November 2026.</b> Bitte lesen Sie diese Bedingungen sorgfältig. Bei Abweichungen zwischen den Sprachfassungen gilt die englische Fassung.</p>
 <p>Find My Trial™ ist ein Suchdienst für klinische Studien, betrieben von ${esc(ORG.name)} („wir“, „uns“), der derzeit als Pilot angeboten wird. Indem Sie das Kästchen auf der Startseite ankreuzen oder Find My Trial™ aufrufen oder nutzen, bestätigen Sie, dass Sie diese Bedingungen gelesen und verstanden haben und ihnen zustimmen. Wenn Sie nicht zustimmen, nutzen Sie Find My Trial™ nicht.</p>
 <ol>
 <li><b>Was Find My Trial™ ist.</b> Find My Trial™ ist ein Pilotdienst. Er steht Privatpersonen sowie Unternehmen und anderen Organisationen offen und wird laufend verbessert; Funktionen können ohne Ankündigung hinzukommen, sich ändern oder wegfallen. Er ist ein Informationswerkzeug, um klinische Studien zu finden und mit einer Ärztin, einem Arzt oder einem Studienteam zu besprechen, und darf nicht die einzige Grundlage für medizinische, therapeutische, wissenschaftliche, rechtliche oder andere wichtige Entscheidungen sein. Es listet Studien ${L(A.about, 2)}, die rekrutieren oder bald rekrutieren und mindestens ein Zentrum ${COUNTRY.inName[2]} haben, wie auf ${REGS(2)} veröffentlicht. Die Liste wird einmal täglich automatisch aktualisiert; die Seite zeigt das Datum der letzten Aktualisierung. Studien, die nicht auf ${REGS(2)} registriert sind, fehlen, daher kann die Liste unvollständig sein, und die Angaben zu einer Studie können sich seit der letzten Aktualisierung geändert haben.</li>
@@ -74,7 +74,7 @@ data: () => `<h2>Datenquellen</h2><ol>
 
   LEGAL.it = {
 terms: () => `<h2>Condizioni d'uso</h2>
-<p class="lede"><b>In vigore dal 22 novembre 2026.</b> Leggi attentamente queste condizioni. In caso di differenze tra le versioni linguistiche prevale la versione inglese.</p>
+<p class="lede"><b>In vigore dal 23 novembre 2026.</b> Leggi attentamente queste condizioni. In caso di differenze tra le versioni linguistiche prevale la versione inglese.</p>
 <p>Find My Trial™ è un servizio di ricerca di studi clinici gestito da ${esc(ORG.name)} («noi»), offerto attualmente in versione pilota. Spuntando la casella nella pagina iniziale, o accedendo a Find My Trial™ o usandolo, confermi di aver letto, compreso e accettato queste condizioni. Se non le accetti, non usare Find My Trial™.</p>
 <ol>
 <li><b>Che cos'è Find My Trial™.</b> Find My Trial™ è un servizio pilota. È aperto a privati, aziende e altre organizzazioni ed è in continuo miglioramento: alcune funzioni possono essere aggiunte, modificate o rimosse senza preavviso. È uno strumento informativo per trovare studi clinici da discutere con un medico o con il gruppo dello studio e non deve essere l'unica base per decisioni mediche, terapeutiche, di ricerca, legali o comunque importanti. Elenca gli studi ${L(A.about, 3)} che reclutano o reclutano a breve e hanno almeno un centro ${COUNTRY.inName[3]}, come pubblicati su ${REGS(3)}. L'elenco è aggiornato automaticamente una volta al giorno e la pagina mostra la data dell'ultimo aggiornamento. Gli studi non registrati su ${REGS(3)} non sono inclusi, quindi l'elenco può essere incompleto e i dettagli di uno studio possono essere cambiati dall'ultimo aggiornamento.</li>
@@ -137,7 +137,7 @@ data: () => `<h2>Fonti dei dati</h2><ol>
 
   LEGAL.es = {
 terms: () => `<h2>Condiciones de uso</h2>
-<p class="lede"><b>Vigentes desde el 22 de noviembre de 2026.</b> Lea atentamente estas condiciones. Si las versiones lingüísticas difieren, prevalece la versión inglesa.</p>
+<p class="lede"><b>Vigentes desde el 23 de noviembre de 2026.</b> Lea atentamente estas condiciones. Si las versiones lingüísticas difieren, prevalece la versión inglesa.</p>
 <p>Find My Trial™ es un servicio de búsqueda de ensayos clínicos gestionado por ${esc(ORG.name)} («nosotros»), que se ofrece actualmente como piloto. Al marcar la casilla de la página de inicio, o al acceder a Find My Trial™ o usarlo, confirma que ha leído, entendido y aceptado estas condiciones. Si no las acepta, no use Find My Trial™.</p>
 <ol>
 <li><b>Qué es Find My Trial™.</b> Find My Trial™ es un servicio piloto. Está abierto a particulares, empresas y otras organizaciones y se sigue mejorando, por lo que pueden añadirse, cambiarse o retirarse funciones sin aviso. Es una herramienta informativa para encontrar ensayos clínicos que comentar con un médico o un equipo de estudio, y no debe ser la única base para decisiones médicas, terapéuticas, de investigación, legales u otras decisiones importantes. Muestra los estudios ${L(A.about, 4)} que reclutan o reclutarán próximamente y tienen al menos un centro ${COUNTRY.inName[4]}, tal como se publican en ${REGS(4)}. La lista se actualiza automáticamente una vez al día y la página muestra la fecha de la última actualización. Los estudios no registrados en ${REGS(4)} no se incluyen, por lo que la lista puede estar incompleta, y los datos de un estudio pueden haber cambiado desde la última actualización.</li>
