@@ -375,6 +375,9 @@ class Forms(html.parser.HTMLParser):
     def handle_starttag(self, tag, a):
         a = dict(a)
         if tag == "form":
+            self.depth = getattr(self, "depth", 0) + 1
+            if self.depth > 1:
+                return  # a form inside a form belongs to the outer one, as in a browser
             self.cur = a.get("id") or a.get("name") or str(len(self.forms))
             self.forms[self.cur] = {"action": a.get("action", ""), "fields": {}, "buttons": [], "selects": {}}
         elif self.cur is None:
@@ -407,7 +410,9 @@ class Forms(html.parser.HTMLParser):
         if tag == "select":
             self.sel = None
         elif tag == "form":
-            self.cur = None
+            self.depth = max(0, getattr(self, "depth", 1) - 1)
+            if self.depth == 0:
+                self.cur = None
 
 
 def drks_export(status):
