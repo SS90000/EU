@@ -13,8 +13,9 @@ cities already known from ClinicalTrials.gov, then from OpenStreetMap's Nominati
 
 Only the Python standard library is used.
 """
-import gzip, html.parser, http.cookiejar, io, json, os, re, time, urllib.parse, urllib.request, zipfile
+import gzip, html.parser, io, json, os, re, time, urllib.parse, urllib.request, zipfile
 import xml.etree.ElementTree as ET
+from http import cookiejar
 from datetime import datetime, timezone
 
 CTIS = "https://euclinicaltrials.eu/ctis-public-api"
@@ -402,7 +403,7 @@ class Forms(html.parser.HTMLParser):
 
 def drks_export(status):
     """Search DRKS for one recruitment status and return the JSON export (the same steps as the website's Download button)."""
-    jar = http.cookiejar.CookieJar()
+    jar = cookiejar.CookieJar()
     op = urllib.request.build_opener(urllib.request.HTTPCookieProcessor(jar))
     op.addheaders = [("User-Agent", UA)]
 
