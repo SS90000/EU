@@ -585,7 +585,7 @@ def write_area(area, rows, built, total):
             cats[c] = cats.get(c, 0) + 1
         kinds[r["k"]] = kinds.get(r["k"], 0) + 1
     meta = {"built": built, "country": COUNTRY, "area": area, "studies": len(out), "registryTotal": total,
-            "sites": sum(len(r["s"]) for r in out), "bySource": {k: sum(1 for r in out if r.get("src", "ctgov") == k) for k in ("ctgov", "ctis", "isrctn")}, "hcOnly": sum(1 for r in out if r.get("hc")), "categories": cats, "kinds": kinds, "source": "ClinicalTrials.gov API v2"}
+            "sites": sum(len(r["s"]) for r in out), "bySource": {k: sum(1 for r in out if r.get("src", "ctgov") == k) for k in ("ctgov", "ctis", "isrctn", "drks")}, "hcOnly": sum(1 for r in out if r.get("hc")), "categories": cats, "kinds": kinds, "source": "ClinicalTrials.gov API v2"}
     with open(os.path.join(d, "meta.json"), "w", encoding="utf-8") as f:
         json.dump(meta, f, ensure_ascii=False, indent=1)
     log(f"{area}: {meta['studies']} studies at {meta['sites']} sites; " +
@@ -692,7 +692,8 @@ def main():
                    "areas": {a: {"studies": m["studies"], "sites": m["sites"]} for a, m in metas.items()},
                    "hcOnly": hc_added, "hcNoRegistry": hc_noreg, "notIncluded": left_out, "otherRegistries": eu_counts,
                    "source": "ClinicalTrials.gov API v2" + ("; Health Canada clinical trial search portal" if hc_added else "")
-                             + ("; EU CTIS" if eu_counts.get("ctis") else "") + ("; ISRCTN" if eu_counts.get("isrctn") else "")}, f, ensure_ascii=False, indent=1)
+                             + ("; EU CTIS" if eu_counts.get("ctis") else "") + ("; ISRCTN" if eu_counts.get("isrctn") else "")
+                             + ("; DRKS (German Clinical Trials Register, CC BY 4.0)" if eu_counts.get("drks") else "")}, f, ensure_ascii=False, indent=1)
     log(f"Wrote {len(rows)} studies; removed {removed} closed studies")
 
 

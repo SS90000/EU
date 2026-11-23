@@ -2,6 +2,9 @@
 
   CTIS   (EU Clinical Trials Information System, euclinicaltrials.eu): France, Germany, Italy, Spain
   ISRCTN (isrctn.com): all five countries, mainly the UK
+  DRKS   (German Clinical Trials Register, drks.de): Germany. Only records registered or last updated
+         from 2025, which DRKS publishes under CC BY 4.0; older records may be under copyright.
+         Each record keeps the date it was retrieved, which the page shows with the source.
 
 Records that carry a ClinicalTrials.gov number already in the main download are skipped,
 so a trial appears once. Sites have no map position in these registries; it comes from
@@ -10,7 +13,7 @@ cities already known from ClinicalTrials.gov, then from OpenStreetMap's Nominati
 
 Only the Python standard library is used.
 """
-import gzip, json, os, re, time, urllib.parse, urllib.request
+import gzip, html.parser, http.cookiejar, io, json, os, re, time, urllib.parse, urllib.request, zipfile
 import xml.etree.ElementTree as ET
 from datetime import datetime, timezone
 
@@ -353,6 +356,157 @@ def isrctn_rows(country, skip):
     return out
 
 
+# ---------- DRKS ----------
+DRKS = "https://drks.de/search"
+DRKS_FROM = "2025-01-01"  # records registered or updated from this date are CC BY 4.0 (DRKS terms of use)
+DRKS_PHASE = {"PHASE_0": "", "PHASE_I": "1", "PHASE_I_II": "1/2", "PHASE_II": "2", "PHASE_II_III": "2/3", "PHASE_III": "3", "PHASE_IV": "4"}
+DRKS_DRUG = re.compile(r"\b(drug|medication|tablet|capsule|infusion|injection|placebo|dose|dosing|mg\b|vaccin|Arzneimittel|Medikament)", re.I)
+DRKS_DEVICE = re.compile(r"\b(device|implant|stent|app\b|software|wearable|Medizinprodukt)", re.I)
+DRKS_BEHAV = re.compile(r"\b(training|exercise|counsel|education|psychotherap|cognitive behavio|coaching|program(me)?\b)", re.I)
+
+
+class Forms(html.parser.HTMLParser):
+    """Collects each form's action and the fields a browser would send."""
+    def __init__(self):
+        super().__init__()
+        self.forms, self.cur, self.sel = {}, None, None
+
+    def handle_starttag(self, tag, a):
+        a = dict(a)
+        if tag == "form":
+            self.cur = a.get("id") or a.get("name") or str(len(self.forms))
+            self.forms[self.cur] = {"action": a.get("action", ""), "fields": {}, "buttons": [], "selects": {}}
+        elif self.cur is None:
+            return
+        elif tag == "input" and a.get("name"):
+            t = (a.get("type") or "text").lower()
+            if t in ("checkbox", "radio") and "checked" not in a:
+                return
+            if t in ("submit", "button", "image"):
+                return
+            self.forms[self.cur]["fields"][a["name"]] = a.get("value", "")
+        elif tag == "button" and a.get("name"):
+            self.forms[self.cur]["buttons"].append(a["name"])
+        elif tag == "select" and a.get("name"):
+            self.sel = a["name"]
+            self.forms[self.cur]["fields"].setdefault(self.sel, "")
+        elif tag == "option" and self.sel and "selected" in a:
+            self.forms[self.cur]["fields"][self.sel] = a.get("value", "")
+
+    def handle_endtag(self, tag):
+        if tag == "select":
+            self.sel = None
+        elif tag == "form":
+            self.cur = None
+
+
+def drks_export(status):
+    """Search DRKS for one recruitment status and return the JSON export (the same steps as the website's Download button)."""
+    jar = http.cookiejar.CookieJar()
+    op = urllib.request.build_opener(urllib.request.HTTPCookieProcessor(jar))
+    op.addheaders = [("User-Agent", UA)]
+
+    def page(url, data=None):
+        body = urllib.parse.urlencode(data).encode() if data is not None else None
+        with op.open(url, data=body, timeout=300) as r:
+            return r.geturl(), r.read()
+
+    url, raw = page(DRKS + "/en")
+    f = Forms(); f.feed(raw.decode("utf-8", "replace"))
+    sf = f.forms["searchForm"]
+    fields = dict(sf["fields"])
+    status_key = next(k for k in fields if k.endswith(":trialStatus"))
+    fields[status_key] = status
+    fields[sf["buttons"][-1]] = ""  # the last button of the form is "Search"
+    url, raw = page(urllib.parse.urljoin(url, sf["action"]), fields)
+    f = Forms(); f.feed(raw.decode("utf-8", "replace"))
+    rf = f.forms["resultForm"]
+    fields = dict(rf["fields"])
+    fields["selectedType"] = "JSON"
+    btn = next(b for b in rf["buttons"] if b.endswith("downloadTrial"))
+    fields[btn.rsplit(":", 1)[0] + ":confirmationDownload"] = "on"  # "I accept the terms of use"
+    fields[btn] = ""
+    page(urllib.parse.urljoin(url, rf["action"]), fields)
+    _, raw = page(DRKS + "/download/export")
+    with zipfile.ZipFile(io.BytesIO(raw)) as z:
+        return json.loads(z.read(z.namelist()[0]).decode("utf-8"))
+
+
+def drks_loc(items, key, lang="en"):
+    """Pick the English text of a list of {idLocale:{locale}, key: ...}, else German."""
+    by = {((x.get("idLocale") or x.get("idArm") or {}).get("locale")): x.get(key) for x in items or []}
+    return (by.get(lang) or by.get("de") or "").strip()
+
+
+def drks_age(a):
+    if not a or a.get("amount") is None:
+        return None
+    return bt.years(f"{a['amount']} {str(a.get('unit', 'YEARS')).lower().rstrip('s')}")
+
+
+def drks_rows(skip):
+    today = datetime.now(timezone.utc).strftime("%Y-%m-%d")
+    out, dup, old, abroad = [], 0, 0, 0
+    for status, st in (("RECRUITING", "R"), ("PENDING", "NYR")):
+        for x in drks_export(status):
+            if max(x.get("lastUpdate") or "", x.get("registrationDrks") or "") < DRKS_FROM:
+                old += 1
+                continue
+            rec = x.get("recruitment") or {}
+            if "DE" not in [((c.get("idCountry") or {}).get("code")) for c in rec.get("countries") or []]:
+                abroad += 1
+                continue
+            sec = x.get("secondaryIds") or {}
+            other = (sec.get("otherPrimaryRegisterId") or "").strip().upper()
+            eudract = (sec.get("eudraCtNumber") or "").strip()
+            nct = other if other.startswith("NCT") else ""
+            if x["drksId"] in skip or nct in skip or other in skip or (eudract and eudract in skip):
+                dup += 1
+                continue
+            d = x.get("trialDescriptions") or []
+            title = drks_loc(d, "title") or x["drksId"]
+            conds = []
+            for c in x.get("studiedHealthConditions") or []:
+                t = drks_loc(c.get("studiedHealthConditionDescriptions"), "comment")
+                if t and t not in conds:
+                    conds.append(t)
+            rd = rec.get("recruitmentDescriptions") or []
+            inc, exc = drks_loc(rd, "inclusionCriteria"), drks_loc(rd, "exclusionCriteria")
+            sc = x.get("studyCharacteristic") or {}
+            arms = [g.get("comment", "").strip() for g in x.get("observationalGroups") or []
+                    if (g.get("idArm") or {}).get("locale") == "en" and g.get("comment")]
+            armtxt = " ".join(arms)
+            iv = ["drug"] if eudract or DRKS_DRUG.search(armtxt) else ["device"] if DRKS_DEVICE.search(armtxt) \
+                else ["behav"] if DRKS_BEHAV.search(armtxt) else ["other"]
+            kind = "obs" if sc.get("type") == "NON_INTERVENTIONAL" else bt.KIND.get(sc.get("purpose") or "", "support")
+            cc, sp = "", ""
+            for c in x.get("trialContacts") or []:
+                t, ct = (c.get("idContactIdType") or {}).get("type"), c.get("contact") or {}
+                if t == "PUBLIC_QUERIES" and not cc:
+                    who = " ".join(v for v in (ct.get("title"), ct.get("firstName"), ct.get("lastName")) if v)
+                    cc = contact(who, ct.get("affiliation"), ct.get("phone"), ct.get("email"))
+                if t == "PRIMARY_SPONSOR" and not sp:
+                    sp = ct.get("affiliation") or " ".join(v for v in (ct.get("firstName"), ct.get("lastName")) if v)
+            sites = [{"f": (i.get("name") or "Study site")[:160], "city": clean_city(i.get("city")), "zip": "", "s": st, "pr": "", "c": ""}
+                     for i in rec.get("institutes") or []]
+            if not sites:
+                continue
+            g = (rec.get("gender") or "ALL").upper()
+            out.append({"id": x["drksId"], "src": "drks", "title": title, "official": "", "ac": (drks_loc(d, "acronym") or "")[:25],
+                        "conds": conds, "anc": [], "rare": False, "summary": drks_loc(d, "summary"),
+                        "crit": (f"Inclusion criteria:\n{inc}" if inc else "") + (f"\nExclusion criteria:\n{exc}" if exc else ""),
+                        "kind": kind, "ph": DRKS_PHASE.get(sc.get("phase") or "", ""),
+                        "a0": drks_age(rec.get("minimumAge")), "a1": drks_age(rec.get("maximumAge")),
+                        "sx": "F" if g == "FEMALE" else "M" if g == "MALE" else "A", "hv": bool(rec.get("healthyVolunteers")),
+                        "upd": x.get("lastUpdate") or "", "pcd": rec.get("scheduledCompletionDate") or "",
+                        "start": rec.get("actualStartDate") or rec.get("scheduledStartDate") or "", "sp": sp, "cc": cc, "iv": iv,
+                        "ivs": [{"type": "ARM", "name": a[:300]} for a in arms], "sites": sites, "nct": nct, "retrieved": today})
+            skip.add(x["drksId"])
+    bt.log(f"DRKS: {len(out)} trials added; {dup} already on ClinicalTrials.gov, CTIS or ISRCTN; "
+           f"{old} left out because they were last updated before 2025 (not under the open licence); {abroad} recruit only outside Germany")
+    return out
+
+
 # ---------- map positions ----------
 def geocode(rows, known):
     """known: {ckey(city): (lat, lon)} from ClinicalTrials.gov sites in the same country."""
@@ -434,6 +588,8 @@ def to_row(x):
               "areas": sorted(areas), "central": [x["cc"]] if x["cc"] else [], "sites": x["sites"], "sitesOutside": 0}
     if x.get("nct"):
         detail["nct"] = x["nct"]
+    if x.get("retrieved"):
+        detail["retrieved"] = x["retrieved"]
     return row, detail
 
 
@@ -464,6 +620,14 @@ def run(module, ct_ids, ct_rows):
         counts["isrctn"] = len(i)
     except Exception as e:
         bt.log(f"ISRCTN step skipped ({e!r})")
+    if country == "Germany":
+        try:
+            skip |= {x["id"] for x in found} | {x["nct"] for x in found if x.get("nct")}
+            dk = drks_rows(skip)
+            found += dk
+            counts["drks"] = len(dk)
+        except Exception as e:
+            bt.log(f"DRKS step skipped ({e!r})")
     geocode(found, known)
     out = [to_row(x) for x in found]
     return out, counts
