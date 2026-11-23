@@ -657,13 +657,26 @@ def run(module, ct_ids, ct_rows):
     except Exception as e:
         bt.log(f"ISRCTN step skipped ({e!r})")
     if country == "Germany":
-        try:
-            skip |= {x["id"] for x in found} | {x["nct"] for x in found if x.get("nct")}
-            dk = drks_rows(skip)
+        skip |= {x["id"] for x in found} | {x["nct"] for x in found if x.get("nct")}
+        cache = os.path.join(bt.REF, "drks.json.gz")
+        dk = None
+        for attempt in range(3):
+            try:
+                dk = drks_rows(set(skip))
+                with gzip.open(cache, "wt", encoding="utf-8") as f:
+                    json.dump(dk, f, ensure_ascii=False, separators=(",", ":"))
+                break
+            except Exception as e:
+                bt.log(f"DRKS download failed ({e!r}); attempt {attempt + 1} of 3")
+                time.sleep(60)
+        if dk is None and os.path.exists(cache) and time.time() - os.path.getmtime(cache) < 7 * 86400:
+            # keep yesterday's DRKS trials rather than dropping them for a day; each keeps its own retrieval date
+            with gzip.open(cache, "rt", encoding="utf-8") as f:
+                dk = [x for x in json.load(f) if x["id"] not in skip and x.get("nct") not in skip]
+            bt.log(f"DRKS: using the last successful download ({len(dk)} trials)")
+        if dk:
             found += dk
             counts["drks"] = len(dk)
-        except Exception as e:
-            bt.log(f"DRKS step skipped ({e!r})")
     geocode(found, known)
     out = [to_row(x) for x in found]
     return out, counts
