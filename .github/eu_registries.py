@@ -425,7 +425,9 @@ def drks_export(status):
     f = Forms(); f.feed(raw.decode("utf-8", "replace"))
     sf = f.forms["searchForm"]
     fields = dict(sf["fields"])
-    status_key = next(k for k in fields if k.endswith(":trialStatus"))
+    status_key = next((k for k in fields if k.endswith(":trialStatus")), None)
+    if not status_key:
+        raise RuntimeError(f"DRKS search form has no status field; forms {list(f.forms)}; fields {list(fields)[:40]}")
     fields[status_key] = status
     fields[sf["buttons"][-1]] = ""  # the last button of the form is "Search"
     url, raw = page(urllib.parse.urljoin(url, sf["action"]), fields)
@@ -436,7 +438,9 @@ def drks_export(status):
     rf = f.forms["resultForm"]
     fields = dict(rf["fields"])
     fields["selectedType"] = "JSON"
-    btn = next(b for b in rf["buttons"] if b.endswith("downloadTrial"))
+    btn = next((b for b in rf["buttons"] if b.endswith("downloadTrial")), None)
+    if not btn:
+        raise RuntimeError(f"DRKS results page has no download button; buttons {rf['buttons'][:40]}; fields {list(rf['fields'])[:40]}")
     fields[btn.rsplit(":", 1)[0] + ":confirmationDownload"] = "on"  # "I accept the terms of use"
     fields[btn] = ""
     page(urllib.parse.urljoin(url, rf["action"]), fields)
