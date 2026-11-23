@@ -1,12 +1,12 @@
 {
- "built": "2026-11-22T22:55:30Z",
+ "built": "2026-11-23T02:16:19Z",
  "country": "France",
  "area": "oncology",
- "studies": 2556,
+ "studies": 2555,
  "registryTotal": 7388,
- "sites": 19914,
+ "sites": 19913,
  "bySource": {
-  "ctgov": 1944,
+  "ctgov": 1943,
   "ctis": 609,
   "isrctn": 3
  },
@@ -23,7 +23,7 @@
   "lymphoma": 226,
   "headneck": 120,
   "sarcoma": 103,
-  "lung": 394,
+  "lung": 393,
   "brain": 141,
   "neuroendocrine": 60,
   "colorectal": 237,
@@ -39,7 +39,7 @@
  },
  "kinds": {
   "treat": 1601,
-  "obs": 458,
+  "obs": 457,
   "diag": 121,
   "support": 376
  },

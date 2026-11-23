@@ -1,21 +1,21 @@
 {
- "built": "2026-11-22T22:57:28Z",
+ "built": "2026-11-23T02:18:42Z",
  "country": "United Kingdom",
  "area": "other",
- "studies": 2688,
+ "studies": 2689,
  "registryTotal": 3247,
- "sites": 10872,
+ "sites": 10876,
  "bySource": {
   "ctgov": 1911,
   "ctis": 0,
-  "isrctn": 777
+  "isrctn": 778
  },
  "hcOnly": 0,
  "categories": {
   "immune": 274,
   "musculoskeletal": 350,
   "pain": 319,
-  "mental": 253,
+  "mental": 254,
   "general": 250,
   "women": 266,
   "heart": 586,
@@ -32,7 +32,7 @@
  },
  "kinds": {
   "obs": 897,
-  "support": 627,
+  "support": 628,
   "treat": 1125,
   "diag": 39
  },

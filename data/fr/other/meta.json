@@ -1,18 +1,18 @@
 {
- "built": "2026-11-22T22:55:30Z",
+ "built": "2026-11-23T02:16:19Z",
  "country": "France",
  "area": "other",
- "studies": 5180,
+ "studies": 5181,
  "registryTotal": 7388,
- "sites": 21284,
+ "sites": 21285,
  "bySource": {
-  "ctgov": 4465,
+  "ctgov": 4466,
   "ctis": 701,
   "isrctn": 14
  },
  "hcOnly": 0,
  "categories": {
-  "mental": 539,
+  "mental": 540,
   "digestive": 434,
   "heart": 915,
   "lung": 600,
@@ -32,7 +32,7 @@
  },
  "kinds": {
   "treat": 1952,
-  "obs": 1699,
+  "obs": 1700,
   "support": 1225,
   "diag": 304
  },
