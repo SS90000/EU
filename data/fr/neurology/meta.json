@@ -1,5 +1,5 @@
 {
- "built": "2026-11-23T02:16:19Z",
+ "built": "2026-11-23T02:25:28Z",
  "country": "France",
  "area": "neurology",
  "studies": 1357,
@@ -8,7 +8,8 @@
  "bySource": {
   "ctgov": 1181,
   "ctis": 173,
-  "isrctn": 3
+  "isrctn": 3,
+  "drks": 0
  },
  "hcOnly": 0,
  "categories": {

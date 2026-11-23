@@ -1,5 +1,5 @@
 {
- "built": "2026-11-23T02:17:23Z",
+ "built": "2026-11-23T02:26:34Z",
  "country": "Italy",
  "area": "other",
  "studies": 3009,
@@ -8,7 +8,8 @@
  "bySource": {
   "ctgov": 2448,
   "ctis": 545,
-  "isrctn": 16
+  "isrctn": 16,
+  "drks": 0
  },
  "hcOnly": 0,
  "categories": {

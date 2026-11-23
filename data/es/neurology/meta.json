@@ -1,5 +1,5 @@
 {
- "built": "2026-11-23T02:17:57Z",
+ "built": "2026-11-23T02:27:05Z",
  "country": "Spain",
  "area": "neurology",
  "studies": 644,
@@ -8,7 +8,8 @@
  "bySource": {
   "ctgov": 482,
   "ctis": 156,
-  "isrctn": 6
+  "isrctn": 6,
+  "drks": 0
  },
  "hcOnly": 0,
  "categories": {

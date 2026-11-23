@@ -1,5 +1,5 @@
 {
- "built": "2026-11-23T02:16:45Z",
+ "built": "2026-11-23T02:25:57Z",
  "country": "Germany",
  "area": "neurology",
  "studies": 578,
@@ -8,7 +8,8 @@
  "bySource": {
   "ctgov": 434,
   "ctis": 141,
-  "isrctn": 3
+  "isrctn": 3,
+  "drks": 0
  },
  "hcOnly": 0,
  "categories": {
