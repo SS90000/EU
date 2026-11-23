@@ -1,10 +1,10 @@
 {
- "built": "2026-11-23T10:34:15Z",
+ "built": "2026-11-23T16:04:50Z",
  "country": "France",
  "area": "rare",
  "studies": 2036,
- "registryTotal": 7388,
- "sites": 12411,
+ "registryTotal": 7400,
+ "sites": 12410,
  "bySource": {
   "ctgov": 1482,
   "ctis": 554,
@@ -30,8 +30,8 @@
   "eyeent": 117
  },
  "kinds": {
-  "treat": 1210,
-  "obs": 505,
+  "treat": 1209,
+  "obs": 506,
   "support": 223,
   "diag": 98
  },

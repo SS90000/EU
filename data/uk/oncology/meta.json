@@ -1,12 +1,12 @@
 {
- "built": "2026-11-23T10:37:05Z",
+ "built": "2026-11-23T16:17:15Z",
  "country": "United Kingdom",
  "area": "oncology",
- "studies": 1173,
- "registryTotal": 3247,
- "sites": 6514,
+ "studies": 1171,
+ "registryTotal": 3244,
+ "sites": 6516,
  "bySource": {
-  "ctgov": 959,
+  "ctgov": 957,
   "ctis": 0,
   "isrctn": 214,
   "drks": 0
@@ -26,11 +26,11 @@
   "prostate": 121,
   "kidney": 36,
   "myeloma": 58,
-  "bladder": 51,
+  "bladder": 50,
   "neuroendocrine": 13,
   "lymphoma": 112,
   "headneck": 58,
-  "gyn": 100,
+  "gyn": 99,
   "solid": 148,
   "skin": 63,
   "liver": 53,
@@ -39,9 +39,9 @@
   "thyroid": 9
  },
  "kinds": {
-  "obs": 295,
+  "obs": 294,
   "support": 104,
-  "treat": 742,
+  "treat": 741,
   "diag": 32
  },
  "source": "ClinicalTrials.gov API v2"

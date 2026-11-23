@@ -1,41 +1,41 @@
 {
- "built": "2026-11-23T10:35:26Z",
+ "built": "2026-11-23T16:15:14Z",
  "country": "Germany",
  "area": "other",
- "studies": 2464,
- "registryTotal": 3154,
- "sites": 11740,
+ "studies": 5890,
+ "registryTotal": 3150,
+ "sites": 18816,
  "bySource": {
-  "ctgov": 1800,
+  "ctgov": 1797,
   "ctis": 647,
   "isrctn": 17,
-  "drks": 0
+  "drks": 3429
  },
  "hcOnly": 0,
  "categories": {
-  "eyeent": 146,
-  "immune": 390,
-  "skin": 297,
-  "pain": 230,
-  "lung": 301,
-  "kidney": 195,
-  "women": 191,
-  "infection": 200,
-  "heart": 639,
-  "digestive": 241,
-  "musculoskeletal": 279,
-  "genetic": 398,
-  "blood": 139,
-  "metabolic": 383,
-  "healthy": 109,
-  "general": 91,
-  "mental": 182
+  "eyeent": 349,
+  "immune": 520,
+  "skin": 417,
+  "pain": 805,
+  "lung": 456,
+  "kidney": 298,
+  "women": 340,
+  "infection": 482,
+  "heart": 1006,
+  "digestive": 330,
+  "musculoskeletal": 748,
+  "genetic": 549,
+  "blood": 172,
+  "metabolic": 573,
+  "healthy": 260,
+  "general": 905,
+  "mental": 657
  },
  "kinds": {
-  "treat": 1505,
-  "support": 224,
-  "obs": 699,
-  "diag": 36
+  "treat": 2114,
+  "obs": 2850,
+  "support": 837,
+  "diag": 89
  },
  "source": "ClinicalTrials.gov API v2"
 }

@@ -1,12 +1,12 @@
 {
- "built": "2026-11-23T10:36:24Z",
+ "built": "2026-11-23T16:16:26Z",
  "country": "Spain",
  "area": "other",
- "studies": 2827,
- "registryTotal": 3632,
- "sites": 12229,
+ "studies": 2825,
+ "registryTotal": 3628,
+ "sites": 12225,
  "bySource": {
-  "ctgov": 2029,
+  "ctgov": 2027,
   "ctis": 767,
   "isrctn": 31,
   "drks": 0
@@ -17,14 +17,14 @@
   "digestive": 244,
   "immune": 436,
   "skin": 307,
-  "eyeent": 244,
+  "eyeent": 242,
   "blood": 141,
   "genetic": 379,
   "lung": 334,
   "heart": 543,
   "musculoskeletal": 361,
   "women": 296,
-  "pain": 380,
+  "pain": 379,
   "healthy": 91,
   "kidney": 211,
   "infection": 251,
@@ -32,8 +32,8 @@
   "mental": 223
  },
  "kinds": {
-  "treat": 1906,
-  "support": 333,
+  "treat": 1905,
+  "support": 332,
   "obs": 551,
   "diag": 37
  },

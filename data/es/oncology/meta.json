@@ -1,13 +1,13 @@
 {
- "built": "2026-11-23T10:36:24Z",
+ "built": "2026-11-23T16:16:26Z",
  "country": "Spain",
  "area": "oncology",
- "studies": 1832,
- "registryTotal": 3632,
- "sites": 13724,
+ "studies": 1831,
+ "registryTotal": 3628,
+ "sites": 13711,
  "bySource": {
   "ctgov": 1217,
-  "ctis": 608,
+  "ctis": 607,
   "isrctn": 7,
   "drks": 0
  },
@@ -25,7 +25,7 @@
   "breast": 241,
   "lymphoma": 185,
   "neuroendocrine": 23,
-  "colorectal": 183,
+  "colorectal": 184,
   "gyn": 157,
   "kidney": 42,
   "childhood": 66,
@@ -33,13 +33,13 @@
   "liver": 79,
   "brain": 59,
   "upperGI": 91,
-  "bladder": 83,
-  "pancreas": 101,
+  "bladder": 82,
+  "pancreas": 100,
   "germcell": 10,
   "mesothelioma": 3
  },
  "kinds": {
-  "treat": 1551,
+  "treat": 1550,
   "obs": 175,
   "support": 85,
   "diag": 21

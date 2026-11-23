@@ -1,19 +1,19 @@
 {
- "built": "2026-11-23T10:36:24Z",
+ "built": "2026-11-23T16:16:26Z",
  "country": "Spain",
  "area": "rare",
- "studies": 1286,
- "registryTotal": 3632,
- "sites": 7396,
+ "studies": 1285,
+ "registryTotal": 3628,
+ "sites": 7385,
  "bySource": {
   "ctgov": 771,
-  "ctis": 513,
+  "ctis": 512,
   "isrctn": 2,
   "drks": 0
  },
  "hcOnly": 0,
  "categories": {
-  "rareneuro": 227,
+  "rareneuro": 226,
   "heart": 200,
   "infection": 47,
   "genetic": 558,
@@ -30,7 +30,7 @@
   "kidney": 69
  },
  "kinds": {
-  "treat": 1090,
+  "treat": 1089,
   "obs": 156,
   "support": 35,
   "diag": 5

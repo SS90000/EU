@@ -1,12 +1,12 @@
 {
- "built": "2026-11-23T10:36:24Z",
+ "built": "2026-11-23T16:16:26Z",
  "country": "Spain",
  "area": "neurology",
- "studies": 625,
- "registryTotal": 3632,
- "sites": 2371,
+ "studies": 623,
+ "registryTotal": 3628,
+ "sites": 2361,
  "bySource": {
-  "ctgov": 470,
+  "ctgov": 468,
   "ctis": 149,
   "isrctn": 6,
   "drks": 0
@@ -15,11 +15,11 @@
  "categories": {
   "dementia": 108,
   "movement": 66,
-  "stroke": 98,
+  "stroke": 97,
   "headache": 26,
-  "ms": 44,
+  "ms": 43,
   "epilepsy": 29,
-  "neuromuscular": 113,
+  "neuromuscular": 112,
   "braintumour": 50,
   "als": 25,
   "childneuro": 36,
@@ -29,8 +29,8 @@
   "neuroinfect": 5
  },
  "kinds": {
-  "treat": 459,
-  "obs": 106,
+  "treat": 458,
+  "obs": 105,
   "support": 54,
   "diag": 6
  },

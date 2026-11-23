@@ -1,19 +1,19 @@
 {
- "built": "2026-11-23T10:34:15Z",
+ "built": "2026-11-23T16:04:50Z",
  "country": "France",
  "area": "neurology",
- "studies": 1327,
- "registryTotal": 7388,
- "sites": 4932,
+ "studies": 1325,
+ "registryTotal": 7400,
+ "sites": 4915,
  "bySource": {
-  "ctgov": 1156,
+  "ctgov": 1154,
   "ctis": 168,
   "isrctn": 3,
   "drks": 0
  },
  "hcOnly": 0,
  "categories": {
-  "stroke": 236,
+  "stroke": 235,
   "neuromuscular": 210,
   "movement": 139,
   "braintumour": 120,
@@ -21,16 +21,16 @@
   "epilepsy": 90,
   "dementia": 171,
   "sleep": 71,
-  "ms": 95,
-  "injury": 73,
+  "ms": 94,
+  "injury": 72,
   "neuroinfect": 25,
   "als": 40,
   "generalneuro": 29,
   "headache": 24
  },
  "kinds": {
-  "treat": 494,
-  "obs": 390,
+  "treat": 493,
+  "obs": 389,
   "support": 324,
   "diag": 119
  },
