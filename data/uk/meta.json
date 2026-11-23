@@ -1,5 +1,5 @@
 {
- "built": "2026-11-23T03:01:17Z",
+ "built": "2026-11-23T05:19:39Z",
  "country": "United Kingdom",
  "studies": 4374,
  "registryTotal": 3247,
@@ -9,16 +9,16 @@
    "sites": 6514
   },
   "neurology": {
-   "studies": 624,
-   "sites": 2272
+   "studies": 615,
+   "sites": 2226
   },
   "other": {
-   "studies": 2689,
-   "sites": 10876
+   "studies": 2715,
+   "sites": 11007
   },
   "rare": {
-   "studies": 864,
-   "sites": 4110
+   "studies": 879,
+   "sites": 4174
   }
  },
  "hcOnly": 0,

@@ -1,38 +1,38 @@
 {
- "built": "2026-11-23T02:59:52Z",
+ "built": "2026-11-23T05:17:36Z",
  "country": "Germany",
  "area": "neurology",
- "studies": 1127,
+ "studies": 553,
  "registryTotal": 3154,
- "sites": 4385,
+ "sites": 2722,
  "bySource": {
-  "ctgov": 434,
-  "ctis": 141,
+  "ctgov": 418,
+  "ctis": 132,
   "isrctn": 3,
-  "drks": 549
+  "drks": 0
  },
  "hcOnly": 0,
  "categories": {
-  "movement": 163,
-  "dementia": 137,
-  "epilepsy": 77,
-  "als": 48,
-  "neuromuscular": 207,
-  "ms": 104,
-  "braintumour": 126,
-  "stroke": 187,
-  "childneuro": 74,
-  "injury": 30,
-  "generalneuro": 19,
-  "sleep": 31,
-  "neuroinfect": 21,
-  "headache": 32
+  "movement": 92,
+  "dementia": 62,
+  "epilepsy": 24,
+  "als": 29,
+  "neuromuscular": 105,
+  "ms": 63,
+  "braintumour": 77,
+  "stroke": 83,
+  "childneuro": 24,
+  "injury": 15,
+  "generalneuro": 5,
+  "sleep": 16,
+  "neuroinfect": 6,
+  "headache": 7
  },
  "kinds": {
-  "treat": 446,
-  "obs": 548,
-  "support": 110,
-  "diag": 23
+  "treat": 327,
+  "obs": 181,
+  "support": 32,
+  "diag": 13
  },
  "source": "ClinicalTrials.gov API v2"
 }

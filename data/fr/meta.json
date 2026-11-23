@@ -1,5 +1,5 @@
 {
- "built": "2026-11-23T02:43:18Z",
+ "built": "2026-11-23T05:16:13Z",
  "country": "France",
  "studies": 8871,
  "registryTotal": 7388,
@@ -9,16 +9,16 @@
    "sites": 19913
   },
   "neurology": {
-   "studies": 1357,
-   "sites": 5040
+   "studies": 1327,
+   "sites": 4932
   },
   "other": {
-   "studies": 5181,
-   "sites": 21285
+   "studies": 5246,
+   "sites": 21521
   },
   "rare": {
-   "studies": 2044,
-   "sites": 12561
+   "studies": 2036,
+   "sites": 12411
   }
  },
  "hcOnly": 0,

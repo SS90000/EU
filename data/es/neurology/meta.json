@@ -1,13 +1,13 @@
 {
- "built": "2026-11-23T03:00:41Z",
+ "built": "2026-11-23T05:18:52Z",
  "country": "Spain",
  "area": "neurology",
- "studies": 644,
+ "studies": 625,
  "registryTotal": 3632,
- "sites": 2473,
+ "sites": 2371,
  "bySource": {
-  "ctgov": 482,
-  "ctis": 156,
+  "ctgov": 470,
+  "ctis": 149,
   "isrctn": 6,
   "drks": 0
  },
@@ -19,7 +19,7 @@
   "headache": 26,
   "ms": 44,
   "epilepsy": 29,
-  "neuromuscular": 132,
+  "neuromuscular": 113,
   "braintumour": 50,
   "als": 25,
   "childneuro": 36,
@@ -29,8 +29,8 @@
   "neuroinfect": 5
  },
  "kinds": {
-  "treat": 477,
-  "obs": 107,
+  "treat": 459,
+  "obs": 106,
   "support": 54,
   "diag": 6
  },

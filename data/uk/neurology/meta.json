@@ -1,14 +1,14 @@
 {
- "built": "2026-11-23T03:01:17Z",
+ "built": "2026-11-23T05:19:39Z",
  "country": "United Kingdom",
  "area": "neurology",
- "studies": 624,
+ "studies": 615,
  "registryTotal": 3247,
- "sites": 2272,
+ "sites": 2226,
  "bySource": {
-  "ctgov": 447,
+  "ctgov": 439,
   "ctis": 0,
-  "isrctn": 177,
+  "isrctn": 176,
   "drks": 0
  },
  "hcOnly": 0,
@@ -24,14 +24,14 @@
   "braintumour": 67,
   "epilepsy": 38,
   "headache": 14,
-  "neuromuscular": 98,
+  "neuromuscular": 89,
   "sleep": 17,
   "neuroinfect": 6
  },
  "kinds": {
   "support": 123,
   "obs": 214,
-  "treat": 281,
+  "treat": 272,
   "diag": 6
  },
  "source": "ClinicalTrials.gov API v2"

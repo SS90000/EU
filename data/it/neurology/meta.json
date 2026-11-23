@@ -1,13 +1,13 @@
 {
- "built": "2026-11-23T03:00:18Z",
+ "built": "2026-11-23T05:18:16Z",
  "country": "Italy",
  "area": "neurology",
- "studies": 845,
+ "studies": 831,
  "registryTotal": 4677,
- "sites": 2849,
+ "sites": 2777,
  "bySource": {
-  "ctgov": 704,
-  "ctis": 138,
+  "ctgov": 695,
+  "ctis": 133,
   "isrctn": 3,
   "drks": 0
  },
@@ -16,7 +16,7 @@
   "stroke": 117,
   "headache": 35,
   "ms": 78,
-  "neuromuscular": 162,
+  "neuromuscular": 148,
   "dementia": 142,
   "movement": 112,
   "als": 41,
@@ -29,7 +29,7 @@
   "generalneuro": 8
  },
  "kinds": {
-  "treat": 435,
+  "treat": 421,
   "obs": 293,
   "support": 88,
   "diag": 29

@@ -1,5 +1,5 @@
 {
- "built": "2026-11-23T03:00:18Z",
+ "built": "2026-11-23T05:18:16Z",
  "country": "Italy",
  "studies": 5932,
  "registryTotal": 4677,
@@ -9,16 +9,16 @@
    "sites": 12525
   },
   "neurology": {
-   "studies": 845,
-   "sites": 2849
+   "studies": 831,
+   "sites": 2777
   },
   "other": {
-   "studies": 3009,
-   "sites": 10820
+   "studies": 3047,
+   "sites": 11020
   },
   "rare": {
-   "studies": 1557,
-   "sites": 8281
+   "studies": 1536,
+   "sites": 8140
   }
  },
  "hcOnly": 0,
