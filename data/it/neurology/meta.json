@@ -1,13 +1,13 @@
 {
- "built": "2026-11-23T16:15:53Z",
+ "built": "2026-11-24T10:35:50Z",
  "country": "Italy",
  "area": "neurology",
- "studies": 828,
+ "studies": 829,
  "registryTotal": 4674,
- "sites": 2759,
+ "sites": 2760,
  "bySource": {
   "ctgov": 692,
-  "ctis": 133,
+  "ctis": 134,
   "isrctn": 3,
   "drks": 0
  },
@@ -20,7 +20,7 @@
   "dementia": 141,
   "movement": 111,
   "als": 40,
-  "epilepsy": 40,
+  "epilepsy": 41,
   "braintumour": 80,
   "childneuro": 72,
   "injury": 42,
@@ -29,7 +29,7 @@
   "generalneuro": 8
  },
  "kinds": {
-  "treat": 419,
+  "treat": 420,
   "obs": 292,
   "support": 88,
   "diag": 29

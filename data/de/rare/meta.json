@@ -1,20 +1,20 @@
 {
- "built": "2026-11-23T16:15:14Z",
+ "built": "2026-11-24T10:35:18Z",
  "country": "Germany",
  "area": "rare",
- "studies": 1580,
+ "studies": 1581,
  "registryTotal": 3150,
- "sites": 8916,
+ "sites": 8917,
  "bySource": {
   "ctgov": 782,
   "ctis": 468,
   "isrctn": 3,
-  "drks": 327
+  "drks": 328
  },
  "hcOnly": 0,
  "categories": {
   "rarecancer": 577,
-  "genetic": 619,
+  "genetic": 620,
   "blood": 326,
   "immune": 384,
   "skin": 180,
@@ -31,7 +31,7 @@
  },
  "kinds": {
   "treat": 974,
-  "diag": 18,
+  "diag": 19,
   "obs": 538,
   "support": 50
  },

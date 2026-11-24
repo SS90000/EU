@@ -1,24 +1,24 @@
 {
- "built": "2026-11-23T16:16:26Z",
+ "built": "2026-11-24T10:36:17Z",
  "country": "Spain",
  "area": "rare",
- "studies": 1285,
+ "studies": 1289,
  "registryTotal": 3628,
- "sites": 7385,
+ "sites": 7406,
  "bySource": {
   "ctgov": 771,
-  "ctis": 512,
+  "ctis": 516,
   "isrctn": 2,
   "drks": 0
  },
  "hcOnly": 0,
  "categories": {
-  "rareneuro": 226,
+  "rareneuro": 227,
   "heart": 200,
   "infection": 47,
-  "genetic": 558,
-  "rarecancer": 526,
-  "blood": 352,
+  "genetic": 562,
+  "rarecancer": 528,
+  "blood": 353,
   "immune": 379,
   "musculoskeletal": 179,
   "lung": 132,
@@ -26,11 +26,11 @@
   "raregeneral": 13,
   "metabolic": 134,
   "digestive": 94,
-  "eyeent": 36,
+  "eyeent": 37,
   "kidney": 69
  },
  "kinds": {
-  "treat": 1089,
+  "treat": 1093,
   "obs": 156,
   "support": 35,
   "diag": 5

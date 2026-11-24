@@ -1,24 +1,24 @@
 {
- "built": "2026-11-23T16:15:53Z",
+ "built": "2026-11-24T10:35:50Z",
  "country": "Italy",
- "studies": 5927,
+ "studies": 5934,
  "registryTotal": 4674,
  "areas": {
   "oncology": {
-   "studies": 2203,
-   "sites": 12520
+   "studies": 2205,
+   "sites": 12532
   },
   "neurology": {
-   "studies": 828,
-   "sites": 2759
+   "studies": 829,
+   "sites": 2760
   },
   "other": {
-   "studies": 3046,
-   "sites": 10998
+   "studies": 3050,
+   "sites": 11023
   },
   "rare": {
-   "studies": 1535,
-   "sites": 8136
+   "studies": 1540,
+   "sites": 8161
   }
  },
  "hcOnly": 0,
@@ -29,7 +29,7 @@
   "SUSPENDED": 50
  },
  "otherRegistries": {
-  "ctis": 1226,
+  "ctis": 1233,
   "isrctn": 27
  },
  "source": "ClinicalTrials.gov API v2; EU CTIS; ISRCTN"

@@ -1,24 +1,24 @@
 {
- "built": "2026-11-23T16:17:15Z",
+ "built": "2026-11-24T10:36:56Z",
  "country": "United Kingdom",
- "studies": 4375,
+ "studies": 4377,
  "registryTotal": 3244,
  "areas": {
   "oncology": {
-   "studies": 1171,
-   "sites": 6516
+   "studies": 1172,
+   "sites": 6518
   },
   "neurology": {
    "studies": 614,
    "sites": 2221
   },
   "other": {
-   "studies": 2719,
-   "sites": 11007
+   "studies": 2720,
+   "sites": 11012
   },
   "rare": {
    "studies": 878,
-   "sites": 4172
+   "sites": 4173
   }
  },
  "hcOnly": 0,
@@ -29,7 +29,7 @@
   "SUSPENDED": 86
  },
  "otherRegistries": {
-  "isrctn": 1131
+  "isrctn": 1133
  },
  "source": "ClinicalTrials.gov API v2; ISRCTN"
 }

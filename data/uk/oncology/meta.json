@@ -1,14 +1,14 @@
 {
- "built": "2026-11-23T16:17:15Z",
+ "built": "2026-11-24T10:36:56Z",
  "country": "United Kingdom",
  "area": "oncology",
- "studies": 1171,
+ "studies": 1172,
  "registryTotal": 3244,
- "sites": 6516,
+ "sites": 6518,
  "bySource": {
   "ctgov": 957,
   "ctis": 0,
-  "isrctn": 214,
+  "isrctn": 215,
   "drks": 0
  },
  "hcOnly": 0,
@@ -23,7 +23,7 @@
   "pancreas": 70,
   "upperGI": 62,
   "colorectal": 114,
-  "prostate": 121,
+  "prostate": 122,
   "kidney": 36,
   "myeloma": 58,
   "bladder": 50,
@@ -41,7 +41,7 @@
  "kinds": {
   "obs": 294,
   "support": 104,
-  "treat": 741,
+  "treat": 742,
   "diag": 32
  },
  "source": "ClinicalTrials.gov API v2"

@@ -1,19 +1,19 @@
 {
- "built": "2026-11-23T16:16:26Z",
+ "built": "2026-11-24T10:36:17Z",
  "country": "Spain",
  "area": "oncology",
- "studies": 1831,
+ "studies": 1833,
  "registryTotal": 3628,
- "sites": 13711,
+ "sites": 13740,
  "bySource": {
   "ctgov": 1217,
-  "ctis": 607,
+  "ctis": 609,
   "isrctn": 7,
   "drks": 0
  },
  "hcOnly": 0,
  "categories": {
-  "lung": 339,
+  "lung": 338,
   "solid": 363,
   "general": 67,
   "myeloma": 94,
@@ -21,11 +21,11 @@
   "headneck": 67,
   "sarcoma": 61,
   "prostate": 119,
-  "leukemia": 217,
+  "leukemia": 218,
   "breast": 241,
   "lymphoma": 185,
   "neuroendocrine": 23,
-  "colorectal": 184,
+  "colorectal": 185,
   "gyn": 157,
   "kidney": 42,
   "childhood": 66,
@@ -34,12 +34,12 @@
   "brain": 59,
   "upperGI": 91,
   "bladder": 82,
-  "pancreas": 100,
+  "pancreas": 101,
   "germcell": 10,
   "mesothelioma": 3
  },
  "kinds": {
-  "treat": 1550,
+  "treat": 1552,
   "obs": 175,
   "support": 85,
   "diag": 21

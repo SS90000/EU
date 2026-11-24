@@ -1,15 +1,15 @@
 {
- "built": "2026-11-23T16:15:14Z",
+ "built": "2026-11-24T10:35:18Z",
  "country": "Germany",
  "area": "neurology",
- "studies": 1093,
+ "studies": 1094,
  "registryTotal": 3150,
- "sites": 4181,
+ "sites": 4182,
  "bySource": {
   "ctgov": 417,
   "ctis": 132,
   "isrctn": 3,
-  "drks": 541
+  "drks": 542
  },
  "hcOnly": 0,
  "categories": {
@@ -17,7 +17,7 @@
   "dementia": 137,
   "epilepsy": 77,
   "als": 48,
-  "neuromuscular": 171,
+  "neuromuscular": 172,
   "ms": 103,
   "braintumour": 126,
   "stroke": 186,
@@ -31,7 +31,7 @@
  "kinds": {
   "treat": 421,
   "obs": 539,
-  "support": 110,
+  "support": 111,
   "diag": 23
  },
  "source": "ClinicalTrials.gov API v2"

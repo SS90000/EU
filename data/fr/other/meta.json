@@ -1,13 +1,13 @@
 {
- "built": "2026-11-23T16:04:50Z",
+ "built": "2026-11-24T10:33:14Z",
  "country": "France",
  "area": "other",
- "studies": 5256,
+ "studies": 5257,
  "registryTotal": 7400,
- "sites": 21555,
+ "sites": 21556,
  "bySource": {
   "ctgov": 4532,
-  "ctis": 710,
+  "ctis": 711,
   "isrctn": 14,
   "drks": 0
  },
@@ -23,16 +23,16 @@
   "kidney": 403,
   "infection": 588,
   "eyeent": 343,
-  "immune": 650,
-  "musculoskeletal": 837,
-  "genetic": 720,
+  "immune": 651,
+  "musculoskeletal": 838,
+  "genetic": 721,
   "blood": 239,
   "metabolic": 540,
   "general": 394,
   "healthy": 140
  },
  "kinds": {
-  "treat": 1994,
+  "treat": 1995,
   "obs": 1716,
   "support": 1239,
   "diag": 307

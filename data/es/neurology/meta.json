@@ -1,13 +1,13 @@
 {
- "built": "2026-11-23T16:16:26Z",
+ "built": "2026-11-24T10:36:17Z",
  "country": "Spain",
  "area": "neurology",
- "studies": 623,
+ "studies": 624,
  "registryTotal": 3628,
- "sites": 2361,
+ "sites": 2366,
  "bySource": {
   "ctgov": 468,
-  "ctis": 149,
+  "ctis": 150,
   "isrctn": 6,
   "drks": 0
  },
@@ -24,12 +24,12 @@
   "als": 25,
   "childneuro": 36,
   "injury": 30,
-  "sleep": 33,
+  "sleep": 34,
   "generalneuro": 7,
   "neuroinfect": 5
  },
  "kinds": {
-  "treat": 458,
+  "treat": 459,
   "obs": 105,
   "support": 54,
   "diag": 6

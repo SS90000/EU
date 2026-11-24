@@ -1,14 +1,14 @@
 {
- "built": "2026-11-23T16:17:15Z",
+ "built": "2026-11-24T10:36:56Z",
  "country": "United Kingdom",
  "area": "other",
- "studies": 2719,
+ "studies": 2720,
  "registryTotal": 3244,
- "sites": 11007,
+ "sites": 11012,
  "bySource": {
   "ctgov": 1931,
   "ctis": 0,
-  "isrctn": 788,
+  "isrctn": 789,
   "drks": 0
  },
  "hcOnly": 0,
@@ -23,17 +23,17 @@
   "metabolic": 373,
   "eyeent": 170,
   "lung": 290,
-  "infection": 222,
+  "infection": 223,
   "genetic": 273,
-  "skin": 240,
+  "skin": 241,
   "digestive": 229,
   "blood": 106,
   "kidney": 172,
-  "healthy": 147
+  "healthy": 148
  },
  "kinds": {
   "obs": 901,
-  "support": 634,
+  "support": 635,
   "treat": 1145,
   "diag": 39
  },
