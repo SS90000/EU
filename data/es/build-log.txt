@@ -1,16 +1,16 @@
-2026-11-24 10:35:50 UTC  Rare-disease name list: 24644 names
-2026-11-24 10:35:51 UTC  Registry reports 3628 open studies with a site in Spain
-2026-11-24 10:36:11 UTC  Downloaded 3628 study records; 0 detail files new or changed
-2026-11-24 10:36:11 UTC  CTIS: using today's download (4181 trials)
-2026-11-24 10:36:11 UTC  CTIS Spain: 1511 trials not on ClinicalTrials.gov (591 skipped as already there)
-2026-11-24 10:36:15 UTC  ISRCTN Spain: 228 of 228 ongoing records read; 43 added, 34 already on ClinicalTrials.gov or CTIS, 89 closed to recruitment, 62 list no site in Spain
-2026-11-24 10:36:15 UTC  Map positions: 10795 sites placed, 23 without a position (0 new place lookups)
-2026-11-24 10:36:16 UTC  Added 1554 trials from European registries: ctis 1511, isrctn 43
-2026-11-24 10:36:17 UTC  Left out (not open to new participants): ACTIVE_NOT_RECRUITING 2083, ENROLLING_BY_INVITATION 217, SUSPENDED 50
-2026-11-24 10:36:17 UTC  Most frequent rare-disease matches: multiple myeloma 158, systemic lupus erythematosus 80, acute myeloid leukemia 77, muscular dystrophy 72, myasthenia gravis 67, hemophilia 64, amyloidosis 64, myelodysplastic syndrome 60, follicular lymphoma 56, interstitial lung disease 52, chronic lymphocytic leukemia 46, pulmonary arterial hypertension 43, mantle cell lymphoma 42, scleroderma 40, hemophilia a 39, narcolepsy 37, acute lymphoblastic leukemia 36, duchenne muscular dystrophy 30, neuroblastoma 28, diffuse large b cell lymphoma 27, small lymphocytic lymphoma 27, amyotrophic lateral sclerosis 27, systemic sclerosis 25, primary myelofibrosis 25, myotonic dystrophy 25, glioblastoma 23, idiopathic pulmonary fibrosis 23, hereditary angioedema 22, esophageal squamous cell carcinoma 21, cholangiocarcinoma 20, astrocytoma 20, graft versus host disease 20, marginal zone lymphoma 19, hemophilia b 19, inflammatory myopathy 19, chronic myeloid leukemia 19, b cell non hodgkin lymphoma 18, thalassemia 18, immune thrombocytopenia 18, soft tissue sarcoma 18
-2026-11-24 10:36:17 UTC  Filled in the region for 0 sites from their city
-2026-11-24 10:36:17 UTC  oncology: 1833 studies at 13740 sites; solid 363, lung 338, breast 241, leukemia 218, lymphoma 185, colorectal 185, gyn 157, prostate 119, pancreas 101, skin 100, myeloma 94, upperGI 91, bladder 82, liver 79, general 67, headneck 67, childhood 66, sarcoma 61, brain 59, kidney 42, neuroendocrine 23, germcell 10, thyroid 9, mesothelioma 3
-2026-11-24 10:36:17 UTC  neurology: 624 studies at 2366 sites; neuromuscular 112, dementia 108, stroke 97, movement 66, braintumour 50, ms 43, childneuro 36, sleep 34, injury 30, epilepsy 29, headache 26, als 25, generalneuro 7, neuroinfect 5
-2026-11-24 10:36:17 UTC  other: 2826 studies at 12228 sites; heart 543, immune 436, genetic 380, metabolic 378, pain 378, musculoskeletal 360, lung 334, skin 307, women 296, infection 251, digestive 244, eyeent 243, mental 223, kidney 211, general 146, blood 141, healthy 91
-2026-11-24 10:36:17 UTC  rare: 1289 studies at 7406 sites; genetic 562, rarecancer 528, immune 379, blood 353, rareneuro 227, heart 200, musculoskeletal 179, skin 158, metabolic 134, lung 132, digestive 94, kidney 69, infection 47, eyeent 37, raregeneral 13
-2026-11-24 10:36:17 UTC  Wrote 5182 studies; removed 3 closed studies
+2026-11-25 10:38:00 UTC  Rare-disease name list: 24644 names
+2026-11-25 10:38:03 UTC  Registry reports 3629 open studies with a site in Spain
+2026-11-25 10:38:30 UTC  Downloaded 3629 study records; 65 detail files new or changed
+2026-11-25 10:38:31 UTC  CTIS: using today's download (4183 trials)
+2026-11-25 10:38:31 UTC  CTIS Spain: 1506 trials not on ClinicalTrials.gov (595 skipped as already there)
+2026-11-25 10:38:34 UTC  ISRCTN Spain: 228 of 228 ongoing records read; 43 added, 34 already on ClinicalTrials.gov or CTIS, 90 closed to recruitment, 61 list no site in Spain
+2026-11-25 10:38:34 UTC  Map positions: 10753 sites placed, 23 without a position (0 new place lookups)
+2026-11-25 10:38:37 UTC  Added 1549 trials from European registries: ctis 1506, isrctn 43
+2026-11-25 10:38:37 UTC  Left out (not open to new participants): ACTIVE_NOT_RECRUITING 2079, ENROLLING_BY_INVITATION 217, SUSPENDED 50
+2026-11-25 10:38:37 UTC  Most frequent rare-disease matches: multiple myeloma 160, systemic lupus erythematosus 80, acute myeloid leukemia 77, muscular dystrophy 72, myasthenia gravis 67, amyloidosis 64, hemophilia 64, myelodysplastic syndrome 60, follicular lymphoma 56, interstitial lung disease 52, chronic lymphocytic leukemia 46, pulmonary arterial hypertension 43, mantle cell lymphoma 42, scleroderma 40, hemophilia a 39, narcolepsy 37, acute lymphoblastic leukemia 36, duchenne muscular dystrophy 30, neuroblastoma 28, diffuse large b cell lymphoma 27, small lymphocytic lymphoma 27, amyotrophic lateral sclerosis 27, primary myelofibrosis 25, systemic sclerosis 25, myotonic dystrophy 25, idiopathic pulmonary fibrosis 23, glioblastoma 23, hereditary angioedema 22, esophageal squamous cell carcinoma 21, astrocytoma 20, cholangiocarcinoma 20, graft versus host disease 20, marginal zone lymphoma 19, hemophilia b 19, inflammatory myopathy 19, chronic myeloid leukemia 19, immune thrombocytopenia 18, b cell non hodgkin lymphoma 18, soft tissue sarcoma 18, thalassemia 18
+2026-11-25 10:38:38 UTC  Filled in the region for 0 sites from their city
+2026-11-25 10:38:38 UTC  oncology: 1833 studies at 13712 sites; solid 363, lung 338, breast 241, leukemia 218, colorectal 186, lymphoma 185, gyn 157, prostate 119, pancreas 101, skin 100, myeloma 94, upperGI 91, bladder 81, liver 79, general 67, headneck 67, childhood 66, sarcoma 61, brain 59, kidney 42, neuroendocrine 23, germcell 10, thyroid 9, mesothelioma 3
+2026-11-25 10:38:38 UTC  neurology: 623 studies at 2366 sites; neuromuscular 112, dementia 108, stroke 96, movement 66, braintumour 50, ms 42, childneuro 37, sleep 34, injury 30, epilepsy 29, headache 26, als 25, generalneuro 7, neuroinfect 5
+2026-11-25 10:38:38 UTC  other: 2823 studies at 12206 sites; heart 543, immune 435, genetic 380, metabolic 378, pain 378, musculoskeletal 357, lung 332, skin 306, women 297, infection 252, digestive 244, eyeent 242, mental 223, kidney 212, general 147, blood 141, healthy 90
+2026-11-25 10:38:38 UTC  rare: 1290 studies at 7402 sites; genetic 561, rarecancer 528, immune 380, blood 354, rareneuro 227, heart 201, musculoskeletal 179, skin 158, metabolic 134, lung 132, digestive 94, kidney 70, infection 47, eyeent 37, raregeneral 13
+2026-11-25 10:38:38 UTC  Wrote 5178 studies; removed 14 closed studies

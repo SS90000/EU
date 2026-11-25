@@ -1,19 +1,19 @@
 {
- "built": "2026-11-24T10:33:14Z",
+ "built": "2026-11-25T10:35:13Z",
  "country": "France",
  "area": "neurology",
- "studies": 1325,
- "registryTotal": 7400,
- "sites": 4915,
+ "studies": 1324,
+ "registryTotal": 7403,
+ "sites": 4924,
  "bySource": {
-  "ctgov": 1154,
+  "ctgov": 1153,
   "ctis": 168,
   "isrctn": 3,
   "drks": 0
  },
  "hcOnly": 0,
  "categories": {
-  "stroke": 235,
+  "stroke": 234,
   "neuromuscular": 210,
   "movement": 139,
   "braintumour": 120,
@@ -31,7 +31,7 @@
  "kinds": {
   "treat": 493,
   "obs": 389,
-  "support": 324,
+  "support": 323,
   "diag": 119
  },
  "source": "ClinicalTrials.gov API v2"

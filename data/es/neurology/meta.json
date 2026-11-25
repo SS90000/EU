@@ -1,13 +1,13 @@
 {
- "built": "2026-11-24T10:36:17Z",
+ "built": "2026-11-25T10:38:38Z",
  "country": "Spain",
  "area": "neurology",
- "studies": 624,
- "registryTotal": 3628,
+ "studies": 623,
+ "registryTotal": 3629,
  "sites": 2366,
  "bySource": {
   "ctgov": 468,
-  "ctis": 150,
+  "ctis": 149,
   "isrctn": 6,
   "drks": 0
  },
@@ -15,23 +15,23 @@
  "categories": {
   "dementia": 108,
   "movement": 66,
-  "stroke": 97,
+  "stroke": 96,
   "headache": 26,
-  "ms": 43,
+  "ms": 42,
   "epilepsy": 29,
   "neuromuscular": 112,
   "braintumour": 50,
   "als": 25,
-  "childneuro": 36,
+  "childneuro": 37,
   "injury": 30,
   "sleep": 34,
   "generalneuro": 7,
   "neuroinfect": 5
  },
  "kinds": {
-  "treat": 459,
-  "obs": 105,
-  "support": 54,
+  "treat": 460,
+  "obs": 104,
+  "support": 53,
   "diag": 6
  },
  "source": "ClinicalTrials.gov API v2"

@@ -1,12 +1,12 @@
 {
- "built": "2026-11-24T10:33:14Z",
+ "built": "2026-11-25T10:35:13Z",
  "country": "France",
  "area": "rare",
- "studies": 2037,
- "registryTotal": 7400,
- "sites": 12411,
+ "studies": 2038,
+ "registryTotal": 7403,
+ "sites": 12414,
  "bySource": {
-  "ctgov": 1482,
+  "ctgov": 1483,
   "ctis": 555,
   "isrctn": 0,
   "drks": 0
@@ -14,8 +14,8 @@
  "hcOnly": 0,
  "categories": {
   "rareneuro": 383,
-  "musculoskeletal": 317,
-  "genetic": 833,
+  "musculoskeletal": 318,
+  "genetic": 834,
   "rarecancer": 721,
   "raregeneral": 37,
   "blood": 480,
@@ -30,7 +30,7 @@
   "eyeent": 117
  },
  "kinds": {
-  "treat": 1210,
+  "treat": 1211,
   "obs": 506,
   "support": 223,
   "diag": 98

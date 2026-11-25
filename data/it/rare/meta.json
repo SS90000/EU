@@ -1,21 +1,21 @@
 {
- "built": "2026-11-24T10:35:50Z",
+ "built": "2026-11-25T10:37:59Z",
  "country": "Italy",
  "area": "rare",
- "studies": 1540,
- "registryTotal": 4674,
- "sites": 8161,
+ "studies": 1542,
+ "registryTotal": 4675,
+ "sites": 8172,
  "bySource": {
   "ctgov": 1033,
-  "ctis": 503,
+  "ctis": 505,
   "isrctn": 4,
   "drks": 0
  },
  "hcOnly": 0,
  "categories": {
   "lung": 134,
-  "genetic": 667,
-  "rareneuro": 293,
+  "genetic": 669,
+  "rareneuro": 294,
   "heart": 213,
   "infection": 73,
   "rarecancer": 622,
@@ -30,7 +30,7 @@
   "raregeneral": 14
  },
  "kinds": {
-  "treat": 1020,
+  "treat": 1022,
   "obs": 435,
   "support": 58,
   "diag": 27

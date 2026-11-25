@@ -1,27 +1,27 @@
 {
- "built": "2026-11-24T10:36:56Z",
+ "built": "2026-11-25T10:39:25Z",
  "country": "United Kingdom",
  "area": "neurology",
- "studies": 614,
- "registryTotal": 3244,
- "sites": 2221,
+ "studies": 615,
+ "registryTotal": 3247,
+ "sites": 2231,
  "bySource": {
   "ctgov": 438,
   "ctis": 0,
-  "isrctn": 176,
+  "isrctn": 177,
   "drks": 0
  },
  "hcOnly": 0,
  "categories": {
-  "dementia": 117,
+  "dementia": 118,
   "ms": 39,
   "als": 30,
   "childneuro": 47,
-  "stroke": 95,
+  "stroke": 96,
   "injury": 34,
   "movement": 82,
   "generalneuro": 7,
-  "braintumour": 67,
+  "braintumour": 66,
   "epilepsy": 38,
   "headache": 14,
   "neuromuscular": 88,
@@ -29,9 +29,9 @@
   "neuroinfect": 6
  },
  "kinds": {
-  "support": 123,
+  "support": 125,
   "obs": 214,
-  "treat": 271,
+  "treat": 270,
   "diag": 6
  },
  "source": "ClinicalTrials.gov API v2"

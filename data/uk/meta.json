@@ -1,32 +1,32 @@
 {
- "built": "2026-11-24T10:36:56Z",
+ "built": "2026-11-25T10:39:25Z",
  "country": "United Kingdom",
- "studies": 4377,
- "registryTotal": 3244,
+ "studies": 4380,
+ "registryTotal": 3247,
  "areas": {
   "oncology": {
    "studies": 1172,
-   "sites": 6518
+   "sites": 6528
   },
   "neurology": {
-   "studies": 614,
-   "sites": 2221
+   "studies": 615,
+   "sites": 2231
   },
   "other": {
    "studies": 2720,
-   "sites": 11012
+   "sites": 10983
   },
   "rare": {
-   "studies": 878,
-   "sites": 4173
+   "studies": 880,
+   "sites": 4177
   }
  },
  "hcOnly": 0,
  "hcNoRegistry": null,
  "notIncluded": {
   "ACTIVE_NOT_RECRUITING": 1902,
-  "ENROLLING_BY_INVITATION": 201,
-  "SUSPENDED": 86
+  "ENROLLING_BY_INVITATION": 200,
+  "SUSPENDED": 87
  },
  "otherRegistries": {
   "isrctn": 1133

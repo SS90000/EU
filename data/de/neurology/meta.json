@@ -1,25 +1,25 @@
 {
- "built": "2026-11-24T10:35:18Z",
+ "built": "2026-11-25T10:37:18Z",
  "country": "Germany",
  "area": "neurology",
- "studies": 1094,
- "registryTotal": 3150,
+ "studies": 1092,
+ "registryTotal": 3149,
  "sites": 4182,
  "bySource": {
-  "ctgov": 417,
+  "ctgov": 416,
   "ctis": 132,
   "isrctn": 3,
-  "drks": 542
+  "drks": 541
  },
  "hcOnly": 0,
  "categories": {
-  "movement": 164,
+  "movement": 163,
   "dementia": 137,
   "epilepsy": 77,
   "als": 48,
   "neuromuscular": 172,
   "ms": 103,
-  "braintumour": 126,
+  "braintumour": 125,
   "stroke": 186,
   "childneuro": 74,
   "injury": 30,
@@ -29,7 +29,7 @@
   "headache": 32
  },
  "kinds": {
-  "treat": 421,
+  "treat": 419,
   "obs": 539,
   "support": 111,
   "diag": 23

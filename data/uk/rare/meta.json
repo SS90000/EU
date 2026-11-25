@@ -1,14 +1,14 @@
 {
- "built": "2026-11-24T10:36:56Z",
+ "built": "2026-11-25T10:39:25Z",
  "country": "United Kingdom",
  "area": "rare",
- "studies": 878,
- "registryTotal": 3244,
- "sites": 4173,
+ "studies": 880,
+ "registryTotal": 3247,
+ "sites": 4177,
  "bySource": {
-  "ctgov": 775,
+  "ctgov": 776,
   "ctis": 0,
-  "isrctn": 103,
+  "isrctn": 104,
   "drks": 0
  },
  "hcOnly": 0,
@@ -17,12 +17,12 @@
   "heart": 164,
   "lung": 128,
   "eyeent": 41,
-  "genetic": 267,
-  "rarecancer": 306,
+  "genetic": 268,
+  "rarecancer": 305,
   "musculoskeletal": 134,
   "raregeneral": 27,
-  "skin": 128,
-  "immune": 262,
+  "skin": 130,
+  "immune": 263,
   "kidney": 56,
   "digestive": 96,
   "infection": 39,
@@ -30,8 +30,8 @@
   "blood": 247
  },
  "kinds": {
-  "treat": 574,
-  "support": 50,
+  "treat": 575,
+  "support": 51,
   "obs": 248,
   "diag": 6
  },
