@@ -1,9 +1,9 @@
 {
- "built": "2026-11-25T10:37:59Z",
+ "built": "2026-11-26T10:39:25Z",
  "country": "Italy",
  "area": "neurology",
  "studies": 833,
- "registryTotal": 4675,
+ "registryTotal": 4672,
  "sites": 2771,
  "bySource": {
   "ctgov": 693,
@@ -15,9 +15,9 @@
  "categories": {
   "stroke": 115,
   "headache": 35,
-  "ms": 76,
+  "ms": 77,
   "neuromuscular": 149,
-  "dementia": 141,
+  "dementia": 140,
   "movement": 111,
   "als": 40,
   "epilepsy": 42,

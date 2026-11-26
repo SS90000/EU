@@ -1,30 +1,30 @@
 {
- "built": "2026-11-25T10:35:13Z",
+ "built": "2026-11-26T10:36:45Z",
  "country": "France",
- "studies": 8886,
- "registryTotal": 7403,
+ "studies": 8893,
+ "registryTotal": 7410,
  "areas": {
   "oncology": {
-   "studies": 2562,
-   "sites": 19951
+   "studies": 2563,
+   "sites": 19962
   },
   "neurology": {
    "studies": 1324,
-   "sites": 4924
+   "sites": 4925
   },
   "other": {
-   "studies": 5257,
-   "sites": 21511
+   "studies": 5264,
+   "sites": 21525
   },
   "rare": {
-   "studies": 2038,
-   "sites": 12414
+   "studies": 2033,
+   "sites": 12374
   }
  },
  "hcOnly": 0,
  "hcNoRegistry": null,
  "notIncluded": {
-  "ACTIVE_NOT_RECRUITING": 2204,
+  "ACTIVE_NOT_RECRUITING": 2200,
   "ENROLLING_BY_INVITATION": 122,
   "SUSPENDED": 71
  },

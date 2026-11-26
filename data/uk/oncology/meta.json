@@ -1,12 +1,12 @@
 {
- "built": "2026-11-25T10:39:25Z",
+ "built": "2026-11-26T10:40:46Z",
  "country": "United Kingdom",
  "area": "oncology",
- "studies": 1172,
+ "studies": 1175,
  "registryTotal": 3247,
- "sites": 6528,
+ "sites": 6541,
  "bySource": {
-  "ctgov": 958,
+  "ctgov": 961,
   "ctis": 0,
   "isrctn": 214,
   "drks": 0
@@ -15,8 +15,8 @@
  "categories": {
   "general": 91,
   "childhood": 55,
-  "breast": 135,
-  "leukemia": 114,
+  "breast": 136,
+  "leukemia": 115,
   "brain": 78,
   "lung": 186,
   "sarcoma": 50,
@@ -33,15 +33,15 @@
   "gyn": 99,
   "solid": 148,
   "skin": 63,
-  "liver": 53,
+  "liver": 54,
   "germcell": 12,
   "mesothelioma": 10,
   "thyroid": 9
  },
  "kinds": {
-  "obs": 294,
+  "obs": 295,
   "support": 104,
-  "treat": 742,
+  "treat": 744,
   "diag": 32
  },
  "source": "ClinicalTrials.gov API v2"

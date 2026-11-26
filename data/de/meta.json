@@ -1,37 +1,37 @@
 {
- "built": "2026-11-25T10:37:18Z",
+ "built": "2026-11-26T10:38:48Z",
  "country": "Germany",
- "studies": 9104,
- "registryTotal": 3149,
+ "studies": 9109,
+ "registryTotal": 3150,
  "areas": {
   "oncology": {
-   "studies": 2328,
-   "sites": 15668
+   "studies": 2326,
+   "sites": 15662
   },
   "neurology": {
-   "studies": 1092,
-   "sites": 4182
+   "studies": 1091,
+   "sites": 4181
   },
   "other": {
-   "studies": 5906,
-   "sites": 18777
+   "studies": 5913,
+   "sites": 18808
   },
   "rare": {
-   "studies": 1583,
-   "sites": 8924
+   "studies": 1581,
+   "sites": 8916
   }
  },
  "hcOnly": 0,
  "hcNoRegistry": null,
  "notIncluded": {
-  "ACTIVE_NOT_RECRUITING": 1789,
-  "ENROLLING_BY_INVITATION": 146,
+  "ACTIVE_NOT_RECRUITING": 1788,
+  "ENROLLING_BY_INVITATION": 145,
   "SUSPENDED": 56
  },
  "otherRegistries": {
-  "ctis": 1178,
+  "ctis": 1180,
   "isrctn": 23,
-  "drks": 4754
+  "drks": 4756
  },
  "source": "ClinicalTrials.gov API v2; EU CTIS; ISRCTN; DRKS (German Clinical Trials Register, CC BY 4.0)"
 }

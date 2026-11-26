@@ -1,12 +1,12 @@
 {
- "built": "2026-11-25T10:37:18Z",
+ "built": "2026-11-26T10:38:48Z",
  "country": "Germany",
  "area": "neurology",
- "studies": 1092,
- "registryTotal": 3149,
- "sites": 4182,
+ "studies": 1091,
+ "registryTotal": 3150,
+ "sites": 4181,
  "bySource": {
-  "ctgov": 416,
+  "ctgov": 415,
   "ctis": 132,
   "isrctn": 3,
   "drks": 541
@@ -21,7 +21,7 @@
   "ms": 103,
   "braintumour": 125,
   "stroke": 186,
-  "childneuro": 74,
+  "childneuro": 73,
   "injury": 30,
   "generalneuro": 19,
   "sleep": 31,
@@ -30,7 +30,7 @@
  },
  "kinds": {
   "treat": 419,
-  "obs": 539,
+  "obs": 538,
   "support": 111,
   "diag": 23
  },

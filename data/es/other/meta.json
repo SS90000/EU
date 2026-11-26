@@ -1,12 +1,12 @@
 {
- "built": "2026-11-25T10:38:38Z",
+ "built": "2026-11-26T10:39:59Z",
  "country": "Spain",
  "area": "other",
- "studies": 2823,
- "registryTotal": 3629,
- "sites": 12206,
+ "studies": 2827,
+ "registryTotal": 3634,
+ "sites": 12222,
  "bySource": {
-  "ctgov": 2025,
+  "ctgov": 2029,
   "ctis": 767,
   "isrctn": 31,
   "drks": 0
@@ -15,26 +15,26 @@
  "categories": {
   "metabolic": 378,
   "digestive": 244,
-  "immune": 435,
+  "immune": 436,
   "skin": 306,
   "eyeent": 242,
   "blood": 141,
-  "genetic": 380,
-  "lung": 332,
-  "heart": 543,
-  "musculoskeletal": 357,
+  "genetic": 381,
+  "lung": 333,
+  "heart": 545,
+  "musculoskeletal": 358,
   "women": 297,
   "pain": 378,
   "healthy": 90,
-  "kidney": 212,
-  "infection": 252,
+  "kidney": 213,
+  "infection": 253,
   "general": 147,
   "mental": 223
  },
  "kinds": {
-  "treat": 1904,
+  "treat": 1907,
   "support": 331,
-  "obs": 551,
+  "obs": 552,
   "diag": 37
  },
  "source": "ClinicalTrials.gov API v2"
