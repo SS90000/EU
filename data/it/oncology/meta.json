@@ -1,13 +1,13 @@
 {
- "built": "2026-11-26T10:39:25Z",
+ "built": "2026-11-27T10:37:12Z",
  "country": "Italy",
  "area": "oncology",
- "studies": 2202,
+ "studies": 2203,
  "registryTotal": 4672,
- "sites": 12511,
+ "sites": 12540,
  "bySource": {
   "ctgov": 1639,
-  "ctis": 555,
+  "ctis": 556,
   "isrctn": 8,
   "drks": 0
  },
@@ -15,16 +15,16 @@
  "categories": {
   "general": 128,
   "skin": 120,
-  "lymphoma": 218,
+  "lymphoma": 217,
   "solid": 191,
   "colorectal": 208,
   "headneck": 86,
   "sarcoma": 80,
   "myeloma": 76,
-  "leukemia": 233,
+  "leukemia": 232,
   "prostate": 134,
-  "gyn": 222,
-  "breast": 273,
+  "gyn": 223,
+  "breast": 274,
   "lung": 327,
   "liver": 119,
   "kidney": 53,
@@ -39,7 +39,7 @@
   "germcell": 8
  },
  "kinds": {
-  "treat": 1361,
+  "treat": 1362,
   "obs": 671,
   "support": 106,
   "diag": 64

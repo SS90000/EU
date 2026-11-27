@@ -1,7 +1,7 @@
 {
- "built": "2026-11-26T10:40:46Z",
+ "built": "2026-11-27T10:38:20Z",
  "country": "United Kingdom",
- "studies": 4382,
+ "studies": 4386,
  "registryTotal": 3247,
  "areas": {
   "oncology": {
@@ -13,8 +13,8 @@
    "sites": 2242
   },
   "other": {
-   "studies": 2718,
-   "sites": 10982
+   "studies": 2722,
+   "sites": 10995
   },
   "rare": {
    "studies": 880,
@@ -29,7 +29,7 @@
   "SUSPENDED": 87
  },
  "otherRegistries": {
-  "isrctn": 1135
+  "isrctn": 1139
  },
  "source": "ClinicalTrials.gov API v2; ISRCTN"
 }

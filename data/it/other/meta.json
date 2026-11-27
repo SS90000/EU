@@ -1,23 +1,23 @@
 {
- "built": "2026-11-26T10:39:25Z",
+ "built": "2026-11-27T10:37:12Z",
  "country": "Italy",
  "area": "other",
- "studies": 3047,
+ "studies": 3048,
  "registryTotal": 4672,
- "sites": 11000,
+ "sites": 11002,
  "bySource": {
   "ctgov": 2472,
-  "ctis": 559,
+  "ctis": 560,
   "isrctn": 16,
   "drks": 0
  },
  "hcOnly": 0,
  "categories": {
   "lung": 303,
-  "women": 291,
-  "genetic": 511,
+  "women": 292,
+  "genetic": 512,
   "eyeent": 193,
-  "immune": 426,
+  "immune": 427,
   "musculoskeletal": 461,
   "digestive": 331,
   "pain": 358,
@@ -32,7 +32,7 @@
   "general": 172
  },
  "kinds": {
-  "treat": 1469,
+  "treat": 1470,
   "support": 318,
   "obs": 1177,
   "diag": 83

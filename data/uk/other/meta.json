@@ -1,29 +1,29 @@
 {
- "built": "2026-11-26T10:40:46Z",
+ "built": "2026-11-27T10:38:20Z",
  "country": "United Kingdom",
  "area": "other",
- "studies": 2718,
+ "studies": 2722,
  "registryTotal": 3247,
- "sites": 10982,
+ "sites": 10995,
  "bySource": {
   "ctgov": 1927,
   "ctis": 0,
-  "isrctn": 791,
+  "isrctn": 795,
   "drks": 0
  },
  "hcOnly": 0,
  "categories": {
   "immune": 279,
-  "musculoskeletal": 359,
+  "musculoskeletal": 360,
   "pain": 321,
-  "mental": 272,
-  "general": 250,
+  "mental": 273,
+  "general": 251,
   "women": 267,
   "heart": 587,
   "metabolic": 374,
   "eyeent": 168,
   "lung": 289,
-  "infection": 224,
+  "infection": 225,
   "genetic": 273,
   "skin": 244,
   "digestive": 229,
@@ -33,8 +33,8 @@
  },
  "kinds": {
   "obs": 899,
-  "support": 637,
-  "treat": 1143,
+  "support": 640,
+  "treat": 1144,
   "diag": 39
  },
  "source": "ClinicalTrials.gov API v2"

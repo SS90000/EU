@@ -1,13 +1,13 @@
 {
- "built": "2026-11-26T10:39:59Z",
+ "built": "2026-11-27T10:37:39Z",
  "country": "Spain",
  "area": "oncology",
- "studies": 1830,
+ "studies": 1831,
  "registryTotal": 3634,
- "sites": 13670,
+ "sites": 13674,
  "bySource": {
   "ctgov": 1221,
-  "ctis": 602,
+  "ctis": 603,
   "isrctn": 7,
   "drks": 0
  },
@@ -20,7 +20,7 @@
   "headneck": 67,
   "sarcoma": 61,
   "myeloma": 92,
-  "prostate": 119,
+  "prostate": 120,
   "leukemia": 217,
   "breast": 242,
   "lymphoma": 185,
@@ -39,7 +39,7 @@
   "mesothelioma": 3
  },
  "kinds": {
-  "treat": 1548,
+  "treat": 1549,
   "obs": 176,
   "support": 85,
   "diag": 21
