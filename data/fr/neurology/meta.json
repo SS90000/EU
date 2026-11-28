@@ -1,10 +1,10 @@
 {
- "built": "2026-11-27T10:34:44Z",
+ "built": "2026-11-28T10:21:09Z",
  "country": "France",
  "area": "neurology",
  "studies": 1324,
- "registryTotal": 7410,
- "sites": 4925,
+ "registryTotal": 7412,
+ "sites": 4924,
  "bySource": {
   "ctgov": 1153,
   "ctis": 168,
@@ -24,7 +24,7 @@
   "ms": 94,
   "injury": 72,
   "neuroinfect": 25,
-  "als": 40,
+  "als": 39,
   "generalneuro": 29,
   "headache": 24
  },

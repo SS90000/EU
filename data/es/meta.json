@@ -1,35 +1,35 @@
 {
- "built": "2026-11-27T10:37:39Z",
+ "built": "2026-11-28T10:24:07Z",
  "country": "Spain",
- "studies": 5185,
- "registryTotal": 3634,
+ "studies": 5183,
+ "registryTotal": 3633,
  "areas": {
   "oncology": {
-   "studies": 1831,
-   "sites": 13674
+   "studies": 1830,
+   "sites": 13657
   },
   "neurology": {
    "studies": 624,
-   "sites": 2377
+   "sites": 2374
   },
   "other": {
-   "studies": 2831,
-   "sites": 12238
+   "studies": 2830,
+   "sites": 12225
   },
   "rare": {
    "studies": 1292,
-   "sites": 7373
+   "sites": 7353
   }
  },
  "hcOnly": 0,
  "hcNoRegistry": null,
  "notIncluded": {
-  "ACTIVE_NOT_RECRUITING": 2072,
-  "ENROLLING_BY_INVITATION": 216,
+  "ACTIVE_NOT_RECRUITING": 2073,
+  "ENROLLING_BY_INVITATION": 217,
   "SUSPENDED": 50
  },
  "otherRegistries": {
-  "ctis": 1508,
+  "ctis": 1507,
   "isrctn": 43
  },
  "source": "ClinicalTrials.gov API v2; EU CTIS; ISRCTN"
